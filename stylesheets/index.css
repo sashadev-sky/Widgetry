@@ -1,0 +1,109 @@
+html, body, header, nav, h1, a, ul, li, strong, main, button, i, section, img, div, h2, p, form, fieldset, label, input, textarea, span, article, footer, time, small {
+  margin: 0;        
+  border: 0;
+  padding: 0;
+  font: inherit;      
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  background: transparent;
+  vertical-align: inherit;
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {			
+  padding: 40px;
+  width: 50%;
+  margin: 0 auto;
+  font-family: sans-serif;    
+  font-weight: bold;  
+  line-height: 1.5;        
+}
+
+div {
+  margin-bottom: 30px;
+}
+
+h1 {
+  padding: 10px;
+  padding-left: 0px;
+  font-size: 28px;
+}
+
+p {
+  font-size: 23px;
+}
+
+h2, p {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.clock {
+  background-color: gold;
+  padding: 20px;
+  border: 3px solid black;
+}
+
+.clock p {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.tab-headers {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 30px;
+}
+
+.tab-headers > li {
+  font-weight: 400;
+  width: 65px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 4px;
+  text-align: center;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.tab-headers > li:hover{
+  background-color: black;
+  color: white;
+}
+
+.tab-headers > li.active {
+  font-weight: 600;
+  border-bottom: 0;
+}
+
+
+.tab-parts {
+  width: 200px;
+  height: 200px;
+}
+
+.tab-contents {
+  text-align: center;
+  border: 1px solid black;
+  border-top: 0;
+  height: 150px;
+  background-color: aliceblue;
+  line-height: 9;
+  color: cadetblue;
+}
