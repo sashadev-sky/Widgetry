@@ -2,12 +2,12 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './frontend/widgets.jsx',
+  entry: "./frontend/widgets.jsx",
   output: {
     path: path.resolve(__dirname),
-    filename: 'bundle.js',
-    devtoolModuleFilenameTemplate: '[resourcePath]',
-    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
+    filename: "bundle.js",
+    devtoolModuleFilenameTemplate: "[resourcePath]",
+    devtoolFallbackModuleFilenameTemplate: "[resourcePath]?[hash]"
   },
   module: {
     rules: [
@@ -15,17 +15,28 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           query: {
-            presets: ['@babel/env', '@babel/react']
+            plugins: ["@babel/plugin-proposal-class-properties"],
+            presets: ["@babel/env", "@babel/react"]
           }
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {},
+          },
+        ],
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   },
   watch: true
 };
