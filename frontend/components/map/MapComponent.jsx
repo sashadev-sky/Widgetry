@@ -3,10 +3,13 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 
 import SearchContainer from "./searchContainer";
 import Controls from "./controls";
+import LoadingContainer from "./loadingContainer"
 
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { withStyles } from "@material-ui/core/styles";
 
-export class MapContainer extends Component {
+import mapStyles from "./mapStyles";
+
+class MapContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -110,7 +113,7 @@ export class MapContainer extends Component {
 
     return (
       <div 
-        className="mainComp" 
+        className={this.props.classes.mainComp}
       >
         <div 
           className="mapComponent" 
@@ -174,21 +177,16 @@ export class MapContainer extends Component {
 }
 
 export const MapWrapper = ({...props }) => (
-    <Map className="map" google={props.google} visible={false}>
-      {props.children}
-    </Map>
+  <Map google={props.google} visible={false}>
+    {props.children}
+  </Map>
 );
-
-const LoadingContainer = (props) => (
-  <div className='maploader'> <CircularProgress />
-  </div>
-)
 
 export default GoogleApiWrapper({
   apiKey: "AIzaSyCfqtT00nvDXnjmYMkiYynVqalHjKpkNG4",
   libraries: ["places"],
   v: "3.30",
   LoadingContainer: LoadingContainer
-})(MapContainer);
+})(withStyles(mapStyles)(MapContainer));
 
 

@@ -44,7 +44,86 @@ const mapStyles = {
     ["@media (max-width:600px)"]: {
       transform: "rotate(-90deg)"
     }
-  }
+  },
+  maploader: {
+    display: "flex",
+    height: "650px",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center"
+  },
+  mainComp: {
+    width: "130%",
+    minWidth: "310px",
+    border: "2px solid black",
+    height: "650px",
+    backgroundColor: "#263238",
+    position: "absolute",
+    left: "-144px",
+    overflow: "hidden",
+    ["@media (max-width:1000px)"]: {
+      left: "-84px",
+      width: "115%",
+      overflow: "hidden",
+    },
+    ["@media (max-width:600px)"]: {
+      left: "-78px",
+      width: "115%"
+    },
+    ["@media (max-width:450px)"]: {
+      left: "-27px"
+    }
+  },
+  searchBar: {
+    padding: "2px 4px",
+    display: "flex",
+    width: 275,
+    position: "absolute",
+    height: 59,
+    ["@media (max-width:550px)"]: {
+      width: 205,
+      bottom: 33,
+      left: 5
+    }
+  },
+  clearButton: {
+    padding: "10px",
+    top: "16px",
+    right: "15px",
+    position: "absolute",
+    ["@media (max-width:450px)"]: {
+      right: "10px"
+    }
+  },
+  sidebar: {
+    width: "275px",
+    height: "77px",
+    bottom: "0px",
+    position: "absolute",
+    left: "50%",
+    transform: "translate(-50%, 0)",
+    zIndex: "0"
+  },
+  searchBarDivider: {
+    width: 200,
+    height: 2,
+    margin: 2,
+    position: "relative",
+    bottom: "-47px",
+    left: "21px",
+    font: "900",
+    color: "gray",
+    ["@media (max-width:600px)"]: {
+      width: "130px"
+    },
+    ["@media (max-width:450px)"]: {
+      width: 135
+    }
+  },
+  clearicon: {
+    fontSize: "15px"
+  },
+
 };
 
 export default mapStyles;

@@ -35,7 +35,9 @@ const styles = {
     textAlign: "center"
   },
   spacing: {
-    marginTop: "61px"
+    margin: "59px 5px",
+    marginBottom: "0",
+    // minWidth: "300px",
   }
 };
 

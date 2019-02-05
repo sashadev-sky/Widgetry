@@ -1,4 +1,4 @@
-.mainComp {
+/* .mainComp {
   width: 130%; 
   min-width: 310px;
   border: 2px solid black;
@@ -6,13 +6,13 @@
   background-color: #263238;
   position: relative;
   right: 146px;
-}
+} */
 
 .mapComponent {
   margin: auto;
-  display: block;
-  width: 70%;
-  height: 150%;
+  /* display: block; */
+  /* width: 70%;
+  height: 150%; */
   margin-top: 20px;
 }
 
@@ -20,15 +20,7 @@
   border-radius: 20px;
 }
 
-.maploader{
-  display: flex;
-  height: 650px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.sidebar {
+/* .sidebar {
   width: 275px;
   height: 77px;
   bottom: 0px;
@@ -36,7 +28,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 0;
-}
+} */
 
 .searchInput {
   font: 400 20px 'Roboto', serif;

@@ -29,24 +29,40 @@ class Content extends React.Component {
     switch (locSupport) {
       case true:
         return (
-          <div className={classes.loader}>
-            <CircularProgress color="primary" className={classes.progress} />
+          <Card className={classes.root}>
+            <img
+              className={classes.imgCard}
+              src="../../../assets/imgs/background.png"
+              alt="Card-img"
+            />
+          <div className={classes.imgCardOverlay}>
+            <div className={classes.loader}>
+            <CircularProgress color="primary" />
           </div>
+          </div>
+          </Card >
         );
       case false:
         return <div>Please enable location services</div>;
       default:
         return (
-          <div>
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="default"
-              onClick={() => setSupport()}
-            >
-              Fetch Weather
-            </Button>
-          </div>
+          <Card className={classes.root}>
+            <img
+              className={classes.imgCard}
+              src="../../../assets/imgs/background.png"
+              alt="Card-img"
+            />
+            <div className={classes.imgCardOverlay}>
+              <Button
+                className={classes.button}
+                variant="contained"
+                color="default"
+                onClick={() => setSupport()}
+              >
+                Fetch Weather
+              </Button>
+            </div>
+          </Card>
         );
     }
   };

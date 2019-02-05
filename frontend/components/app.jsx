@@ -13,6 +13,9 @@ import Weather from "./weather/weather";
 import Clock from "./clock/clock";
 import Tabs from "./tabs/tabs";
 
+import Parallax from "../../assets/jss/Parallax/Parallax";
+import MapContainer from "./map/mapComponent";
+
 const panes = [
   {
     id: 1,
@@ -43,20 +46,25 @@ class App extends React.Component {
     const { classes, children, className, ...other } = this.props;
 
     return (
-      <Paper className={classNames(classes.root, className)} {...other}>
-        <GridContainer>
+      <GridContainer className={classNames(classes.root, className)} {...other}>
+        <Parallax>
+      <Paper >
+      
           <div className="wrap">
             <GridItem xs={12} sm={3} md={3}>
               <Clock />
             </GridItem>
-            <GridItem xs={12} sm={6} md={6}>
+            <GridItem xs={12} sm={8} md={6}>
               <Tabs panes={panes} />
             </GridItem>
             <Weather />
             <Calculator xs={12} sm={12} md={12} />
           </div>
-        </GridContainer>
+      
       </Paper>
+      </Parallax>
+      <MapContainer />
+    </GridContainer>
     );
   }
 }

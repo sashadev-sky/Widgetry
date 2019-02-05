@@ -7,6 +7,8 @@ import Paper from "@material-ui/core/Paper";
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
 
+import mapStyles from "./mapStyles";
+
 export class SearchContainer extends Component {
   constructor(props) {
     super(props);
@@ -43,8 +45,8 @@ export class SearchContainer extends Component {
     const { searchDisplay, classes, clickHandler } = this.props;
   
     return (
-      <div className="sidebar" role="search" style={{ zIndex: `${searchDisplay}` }}>
-        <Paper className={classes.root} >
+      <div className={classes.sidebar} role="search" style={{ zIndex: `${searchDisplay}` }}>
+        <Paper className={classes.searchBar} >
           <form onSubmit={this.handleSubmit}>
             <input 
               type="text" 
@@ -58,11 +60,11 @@ export class SearchContainer extends Component {
             />
               <IconButton 
                 aria-label="clear" 
-                className={classes.button} 
+                className={classes.clearButton} 
                 onClick={(e) => clickHandler(this.inputRef, e)}>
-              <ClearIcon className={classes.icon} />
+              <ClearIcon className={classes.clearicon} />
               </IconButton>
-            <Divider className={classes.divider} />
+            <Divider className={classes.searchBarDivider} />
             </form>
           </Paper> 
       </div>
@@ -70,51 +72,4 @@ export class SearchContainer extends Component {
   }
 }
 
-const styles = {
-  root: {
-    padding: "2px 4px",
-    display: "flex",
-    width: 275,
-    position: "absolute",
-    height: 59,
-    ["@media (max-width:550px)"]: {
-      width: 205,
-      bottom: 33,
-      left: 5
-    }
-  },
-  button: {
-    padding: "10px",
-    top: "16px",
-    right: "15px",
-    position: "absolute",
-    ["@media (max-width:450px)"]: {
-      right: "10px"
-    }
-  },
-  icon: {
-    fontSize: "15px"
-  },
-  divider: {
-    width: 200,
-    height: 2,
-    margin: 2,
-    position: "relative",
-    bottom: "-47px",
-    left: "21px",
-    font: "900",
-    color: "gray",
-    ["@media (max-width:600px)"]: {
-      width: "130px"
-    },
-    ["@media (max-width:450px)"]: {
-      width: 135
-    }
-  }
-};
-
-SearchContainer.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(SearchContainer);
+export default withStyles(mapStyles)(SearchContainer);

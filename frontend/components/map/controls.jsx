@@ -11,7 +11,10 @@ import Divider from "@material-ui/core/Divider";
 import mapStyles from "./mapStyles"
 
 class Controls extends React.Component {
-  
+  constructor(props) {
+    super(props);
+  }
+
   render() {
       const { classes, onSearchClick, onHomeClick } = this.props;
     return (

@@ -7,9 +7,6 @@ import App from "./app";
 const Root = () => {
   return (
     <div>
-      <Parallax>
-        <MapContainer />
-      </Parallax>
       <App />
     </div>
   );

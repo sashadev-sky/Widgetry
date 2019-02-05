@@ -7,7 +7,19 @@ const parallaxStyle = {
     margin: "0",
     padding: "0",
     border: "0",
-    alignItems: "center"
+    alignItems: "center",
+    ["@media (max-width:800px)"]: {
+      height: "105vh",
+    },
+    ["@media (max-width:700px)"]: {
+      height: "110vh",
+    },
+    ["@media (max-width:600px)"]: {
+      height: "180vh",
+    },
+    // ["@media (max-width:450px)"]: {
+    //   height: "190vh",
+    // }
   },
   filter: {},
   primaryColor: {
