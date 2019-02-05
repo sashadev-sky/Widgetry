@@ -37,7 +37,7 @@ const styles = {
   spacing: {
     margin: "59px 5px",
     marginBottom: "0",
-    // minWidth: "300px",
+    minWidth: "300px",
   }
 };
 

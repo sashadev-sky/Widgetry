@@ -9,7 +9,7 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div className="clockComponent">
+      <div className={this.props.classes.spacing}>
         <AnalogClock width={200} theme={Themes.lime} />
       </div>
     );
@@ -18,8 +18,14 @@ class Clock extends React.Component {
 
 const styles = {
   spacing: {
-    margin: "15px auto",
-    marginTop: "20px"
+    marginLeft: "-15px",
+    marginTop: "30px",
+    ["@media (max-width:599px)"]: {
+      marginLeft: "25%",
+    },
+    ["@media (max-width:460px)"]: {
+      marginLeft: "20%",
+    }
   }
 };
 

@@ -11,12 +11,24 @@ const parallaxStyle = {
     ["@media (max-width:800px)"]: {
       height: "105vh",
     },
-    ["@media (max-width:700px)"]: {
-      height: "110vh",
+    ["@media (max-width:749px)"]: {
+      height: "181vh",
     },
-    ["@media (max-width:600px)"]: {
-      height: "180vh",
+    ["@media (max-width:599px)"]: {
+      height: "233vh",
     },
+    // ["@media (max-width:729px)"]: {
+    //   height: "142vh",
+    // },
+    // ["@media (max-width:700px)"]: {
+    //   height: "146vh",
+    // },
+    // ["@media (max-width:729px)"]: {
+    //   height: "213vh",
+    // },
+    // ["@media (max-width:600px)"]: {
+    //   height: "180vh",
+    // },
     // ["@media (max-width:450px)"]: {
     //   height: "190vh",
     // }
