@@ -111,7 +111,6 @@ export class MapContainer extends Component {
     return (
       <div 
         className="mainComp" 
-        style={{ minWidth: "310px" }}
       >
         <div 
           className="mapComponent" 

@@ -8,7 +8,8 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import LocationIcon from "@material-ui/icons/LocationOn";
 import Card from "../../../assets/jss/Card/Card";
-import imageCardStyles from "../../../assets/jss/imageCardStyles";
+
+import weatherStyles from "./weatherStyles";
 
 let description;
 let main;
@@ -90,7 +91,7 @@ class Content extends React.Component {
       <Card className={classes.root}>
         <img
           className={classes.imgCard}
-          src="../../screenshots/pic2.png"
+          src="../../../assets/imgs/background.png"
           alt="Card-img"
         />
         <div className={classes.imgCardOverlay}>
@@ -100,7 +101,7 @@ class Content extends React.Component {
             {weatherData.name}
           </h4>
           <div className={classes.cardSection}>
-            <p className="innerDates">{weekday} - {month} {day}</p>
+            <p>{weekday} - {month} {day}</p>
           </div >
           <div className={classes.cardBody}>
             <p>{main} {description}</p>
@@ -117,45 +118,8 @@ class Content extends React.Component {
   }
 }
 
-// css injected into the DOM
-const styles = theme => ({
-  root: {
-    color: "white",
-    fontSize: "15px"
-  },
-  loader: {
-    marginLeft: "20px",
-    marginTop: "20px",
-    width: "450px"
-  },
-  ...imageCardStyles,
-  progress: {
-    margin: theme.spacing.unit * 4
-  },
-  locIcon: {
-    margin: "0px 5px",
-    width: "30px",
-    height: "32px",
-    ["@media (max-width:600px)"]: {
-      width: "26px",
-      height: "26px"
-    }
-  },
-  button: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    borderRadius: 3,
-    border: 0,
-    color: "white",
-    height: 48,
-    padding: "0 30px",
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    marginTop: "10px",
-    marginLeft: "-10px"
-  }
-});
-
 Content.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Content);
+export default withStyles(weatherStyles)(Content);

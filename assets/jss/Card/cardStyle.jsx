@@ -1,7 +1,3 @@
-// import {
-//
-// } from "assets/jss/material-kit-pro-react.jsx";
-
 const cardStyle = {
   card: {
     border: "1px solid black",

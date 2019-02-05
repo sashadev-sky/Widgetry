@@ -6,6 +6,8 @@ import { toQueryString } from "../../util/weather_utils";
 
 import Content from "./content";
 
+import weatherStyles from "./weatherStyles"
+
 class Weather extends React.Component {
   constructor(props) {
     super(props);
@@ -105,16 +107,8 @@ class Weather extends React.Component {
   }
 }
 
-const styles = {
-  spacing: {
-    margin: "30px 15px",
-    marginTop: "0",
-    maxWidth: "350px"
-  }
-};
-
 Weather.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Weather);
+export default withStyles(weatherStyles)(Weather);

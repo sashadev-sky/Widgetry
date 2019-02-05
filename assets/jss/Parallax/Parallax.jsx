@@ -50,7 +50,6 @@ class Parallax extends React.Component {
       className,
       children,
       style,
-      image,
       small
     } = this.props;
     const parallaxClasses = classNames({
@@ -64,7 +63,6 @@ class Parallax extends React.Component {
         className={parallaxClasses}
         style={{
           ...style,
-          backgroundImage: "url(" + image + ")",
           ...this.state
         }}
         ref="parallax"

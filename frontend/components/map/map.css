@@ -1,5 +1,6 @@
 .mainComp {
-  width: 130%;
+  width: 130%; 
+  min-width: 310px;
   border: 2px solid black;
   height: 650px;
   background-color: #263238;

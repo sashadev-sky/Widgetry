@@ -15,13 +15,14 @@ export const extractData = (weatherData) => {
   weatherData.main ? data.b = convertData(weatherData.main) : data.b = '';
 
   //sunrise and sunset
+  window.weather = weatherData.sys;
   let rise = new Date(weatherData.sys.sunrise * 1000);
   let set = new Date(weatherData.sys.sunset * 1000);
 
-  let riseHours = rise.getHours().toString();
-  let riseMin = rise.getMinutes().toString();
-  let setHours = set.getHours().toString()
-  let setMin = set.getMinutes().toString();
+  let riseHours = `${rise.getHours()}`;
+  let riseMin = `${rise.getMinutes()}`;
+  let setHours = `${set.getHours()}`;
+  let setMin = `${set.getMinutes()}`;
 
   let times = { riseHours, riseMin, setHours, setMin };
 
@@ -49,6 +50,7 @@ const doubleDigits = (times) => {
 }
 
 const amPmConverter = (time) => {
+  // Checks for correct time format and splits it into components
   time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)?$/) || [time];
 
   if (time.length > 1) {
@@ -56,6 +58,7 @@ const amPmConverter = (time) => {
     time[5] = +time[0] < 12 ? ' AM' : ' PM';
     time[0] = +time[0] % 12 || 12;
   }
+  
   return time.join('');
 }
 
