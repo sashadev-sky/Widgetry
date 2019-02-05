@@ -53,25 +53,26 @@ const mapStyles = {
     textAlign: "center"
   },
   mainComp: {
-    width: "130%",
+    width: "131%",
     minWidth: "310px",
     border: "2px solid black",
     height: "650px",
     backgroundColor: "#263238",
     position: "absolute",
-    left: "-144px",
+    left: "-150px",
     overflow: "hidden",
     ["@media (max-width:1000px)"]: {
-      left: "-84px",
-      width: "115%",
-      overflow: "hidden",
+      left: "-8px",
+      width: "102%",
+      overflow: "hidden"
     },
     ["@media (max-width:600px)"]: {
-      left: "-78px",
-      width: "115%"
+      left: "-6px",
+      width: "102%"
     },
     ["@media (max-width:450px)"]: {
-      left: "-27px"
+      left: "-6px",
+      width: "102%"
     }
   },
   searchBar: {
@@ -117,13 +118,32 @@ const mapStyles = {
       width: "130px"
     },
     ["@media (max-width:450px)"]: {
-      width: 135
+      width: "135px"
     }
   },
   clearicon: {
-    fontSize: "15px"
+    fontSize: 15
   },
-
+  mapComponent: {
+    position: "relative",
+    height: "500px",
+    width: "80%",
+    borderRadius: "20px",
+    margin: "auto",
+    marginTop: 20,
+    ["@media (max-width:1000px)"]: {
+      margin: "auto",
+      marginTop: "20px"
+    },
+    ["@media (max-width:600px)"]: {
+      margin: "auto",
+      marginTop: "20px"
+    },
+    ["@media (max-width:450px)"]: {
+      margin: "auto",
+      marginTop: "20px"
+    }
+  }
 };
 
 export default mapStyles;

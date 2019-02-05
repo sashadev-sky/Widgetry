@@ -1,33 +1,13 @@
-/* .mainComp {
-  width: 130%; 
-  min-width: 310px;
-  border: 2px solid black;
-  height: 650px;
-  background-color: #263238;
-  position: relative;
-  right: 146px;
-} */
-
-.mapComponent {
+/* .mapComponent {
   margin: auto;
   /* display: block; */
   /* width: 70%;
   height: 150%; */
-  margin-top: 20px;
-}
+  /* margin-top: 20px;
+} */ 
 
-.mapComponent > div > div {
-  border-radius: 20px;
-}
-
-/* .sidebar {
-  width: 275px;
-  height: 77px;
-  bottom: 0px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 0;
+/* .mapComponent > div > div {
+  border-radius: 50px;
 } */
 
 .searchInput {
@@ -39,14 +19,15 @@
   position: absolute;
   top: -3px;
 } 
+
 @media only screen and (max-width: 1000px) {
-  .mainComp {
+  /* .mainComp {
     left: -117px;
     width: 120%;
-  }
-  .mapComponent {
+  } */
+  /* .mapComponent {
     margin-left: 120px;
-  }
+  } */
   .searchInput {
    left: 14px;
   }
@@ -56,13 +37,13 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  .mainComp {
+  /* .mainComp {
     left: -117px;
     width: 125%;
-  }
-  .mapComponent {
+  } */
+  /* .mapComponent {
     margin-left: 100px;
-  }
+  } */
   .searchInput {
    left: 14px;
   }
@@ -76,10 +57,10 @@
     font: 400 15px 'Roboto', serif;
     width: 130px;
   }
-  .mainComp {
+  /* .mainComp {
     left: -27px;
-  }
-  .mapComponent {
+  } */
+  /* .mapComponent {
     margin-left: 20px;
-  }
+  } */
 }

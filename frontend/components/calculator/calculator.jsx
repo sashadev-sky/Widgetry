@@ -28,7 +28,7 @@ class Calculator extends React.Component {
   calcResult(e) {
     let name = e.currentTarget.name;
     let calresult = calculate(this.state.num1, this.state.num2, name)
-    let result = calresult.result.toString();
+    let result = `${calresult.result}`;
     if (result.length > 12) {
       this.setState({ tooltipVal: result, tooltipDisplay: 'block' })
       calresult.result = `${result.slice(0,12)}...`

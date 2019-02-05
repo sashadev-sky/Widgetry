@@ -102,6 +102,8 @@ class MapContainer extends Component {
       mapStyle
     } = this.state;
 
+    const { classes } = this.props;
+
     let [lat, lng] = ["", ""];
 
     if (selectedPlace.geometry) {
@@ -113,16 +115,10 @@ class MapContainer extends Component {
 
     return (
       <div 
-        className={this.props.classes.mainComp}
+        className={classes.mainComp}
       >
         <div 
-          className="mapComponent" 
-          style={{ 
-            position: "relative", 
-            height: "500px", 
-            width: "80%", 
-            bordeRadius: "20px" 
-          }}
+          className={classes.mapComponent}
         >
           <Map 
             google={this.props.google} 

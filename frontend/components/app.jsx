@@ -48,8 +48,7 @@ class App extends React.Component {
     return (
       <GridContainer className={classNames(classes.root, className)} {...other}>
         <Parallax>
-      <Paper >
-      
+         <Paper >
           <div className="wrap">
             <GridItem xs={12} sm={3} md={3}>
               <Clock />
@@ -60,9 +59,8 @@ class App extends React.Component {
             <Weather />
             <Calculator xs={12} sm={12} md={12} />
           </div>
-      
-      </Paper>
-      </Parallax>
+         </Paper>
+        </Parallax>
       <MapContainer />
     </GridContainer>
     );
