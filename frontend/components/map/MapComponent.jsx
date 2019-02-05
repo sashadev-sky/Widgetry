@@ -22,13 +22,14 @@ class MapContainer extends Component {
       selectedPlace: {},
       zoom: 3,
       ref: '',
-      mapStyle: { borderRadius: "10px" }
+      // mapStyle: { borderRadius: "10px" }
     };
   }
 
-  onMapReady = (map, google) => {
-    MapWrapper({ map, google });
-  }
+  // onMapReady = (props) => {
+  //   window.props = props;
+  //   MapWrapper(props);
+  // }
 
   fetchPlace(place, map) {
     let loc = place.geometry.location;
@@ -51,7 +52,7 @@ class MapContainer extends Component {
       this.setState({ zoom })
     }
 
-    this.setState({ showingMarker: true });
+    this.setState({ showingMarker: true, selectedPlace: place });
   }
 
   onSearchClick = () => {
@@ -99,7 +100,7 @@ class MapContainer extends Component {
       activeMarker,
       selectedPlace,
       zoom,
-      mapStyle
+      // mapStyle
     } = this.state;
 
     const { classes } = this.props;
@@ -125,8 +126,9 @@ class MapContainer extends Component {
             zoom={zoom} 
             initialCenter={MapContainer.INITIAL.center} 
             center={center}
-            onReady={this.onMapReady}
-            style={mapStyle}
+            // onReady={this.onMapReady(this.props)}
+            className={classes.mapStyle}
+            // style={mapStyle}
           >
             <SearchContainer 
               changeHandler={this.fetchPlace.bind(this)} 
@@ -172,11 +174,11 @@ class MapContainer extends Component {
   }
 }
 
-export const MapWrapper = ({...props }) => (
-  <Map google={props.google} visible={false}>
-    {props.children}
-  </Map>
-);
+// const MapWrapper = ({...props}) => (
+//   <Map className={props.classes.mapStyle} google={props.google} visible={false}>
+//     {props.children}
+//   </Map>
+// );
 
 export default GoogleApiWrapper({
   apiKey: "AIzaSyCfqtT00nvDXnjmYMkiYynVqalHjKpkNG4",

@@ -128,7 +128,6 @@ const mapStyles = {
     position: "relative",
     height: "500px",
     width: "80%",
-    borderRadius: "20px",
     margin: "auto",
     marginTop: 20,
     ["@media (max-width:1000px)"]: {
@@ -143,6 +142,9 @@ const mapStyles = {
       margin: "auto",
       marginTop: "20px"
     }
+  },
+  mapStyle: {
+    borderRadius: "10px"
   }
 };
 
