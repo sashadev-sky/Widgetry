@@ -58,12 +58,17 @@ const weatherStyles = {
     color: "white"
   },
   cardBody: {
-    fontSize: "20px",
     fontWeight: "500",
     textShadow: "black 0px 0px 10px",
-    marginTop: "10px"
+    padding: "0.9375rem 1.875rem",
+    flex: "1 1 auto",
+    WebkitBoxFlex: "1"
   },
   cardSection: {
+    marginTop: "10px"
+  },
+  cardMiddleSection: {
+    fontSize: "20px",
     marginTop: "10px"
   },
   locIcon: {

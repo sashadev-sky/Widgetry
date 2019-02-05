@@ -116,10 +116,9 @@ class Content extends React.Component {
             className={classes.cardTitle}>
             {weatherData.name}
           </h4>
-          <div className={classes.cardSection}>
-            <p>{weekday} - {month} {day}</p>
-          </div >
           <div className={classes.cardBody}>
+            <p>{weekday} - {month} {day}</p>
+          <div className={classes.cardMiddleSection}>
             <p>{main} {description}</p>
           </div>
           <div className={classes.cardSection}>
@@ -127,7 +126,7 @@ class Content extends React.Component {
             <p>Sunset: {sunsettime}</p>
             <p>Feels like: {main}</p>
           </div>
-
+        </div>
         </div>
       </Card>
     );

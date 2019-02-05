@@ -24,13 +24,6 @@ const cardStyle = {
     background: "transparent",
     boxShadow: "none"
   },
-  cardProfile: {
-    marginTop: "30px",
-    textAlign: "center"
-  },
-  cardBlog: {
-    marginTop: "60px"
-  },
   cardRaised: {
     boxShadow:
       "0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
@@ -61,60 +54,6 @@ const cardStyle = {
     "& small": {
       color: "rgba(255, 255, 255, 0.7) !important"
     }
-  },
-  cardPricing: {
-    textAlign: "center",
-    "&:after": {
-      backgroundColor: "rgba(0, 0, 0, 0.7) !important"
-    },
-    "& ul": {
-      listStyle: "none",
-      padding: 0,
-      maxWidth: "240px",
-      margin: "10px auto"
-    },
-    "& ul li": {
-      color: "#999999",
-      textAlign: "center",
-      padding: "12px 0px",
-      borderBottom: "1px solid rgba(153,153,153,0.3)"
-    },
-    "& ul li:last-child": {
-      border: 0
-    },
-    "& ul li b": {
-      color: "#3c4858"
-    },
-    "& h1": {
-      marginTop: "30px"
-    },
-    "& h1 small": {
-      display: "inline-flex",
-      height: 0,
-      fontSize: "18px"
-    },
-    "& h1 small:first-child": {
-      position: "relative",
-      top: "-17px",
-      fontSize: "26px"
-    },
-    "& ul li svg,& ul li .fab,& ul li .fas,& ul li .far,& ul li .fal,& ul li .material-icons": {
-      position: "relative",
-      top: "7px"
-    }
-  },
-  cardPricingColor: {
-    "& ul li": {
-      color: "#fff",
-      borderColor: "rgba(255,255,255,0.3)",
-      "& b, & svg,& .fab,& .fas,& .far,& .fal,& .material-icons": {
-        color: "#fff",
-        fontWeight: "700"
-      }
-    }
-  },
-  cardProduct: {
-    marginTop: "30px"
   },
   primary: {
     background: "linear-gradient(60deg,#ab47bc,#7b1fa2)",

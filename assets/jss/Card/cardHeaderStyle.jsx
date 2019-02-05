@@ -5,7 +5,7 @@ import {
   infoCardHeader,
   primaryCardHeader,
   roseCardHeader
-} from "../material-kit-pro-react";
+} from "../material-kit-react";
 const cardHeaderStyle = {
   cardHeader: {
     borderRadius: "3px",

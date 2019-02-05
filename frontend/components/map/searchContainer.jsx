@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import ClearIcon from '@material-ui/icons/Clear';
 import { withStyles } from "@material-ui/core/styles";
@@ -9,7 +8,7 @@ import Divider from '@material-ui/core/Divider';
 
 import mapStyles from "./mapStyles";
 
-export class SearchContainer extends Component {
+class SearchContainer extends Component {
   constructor(props) {
     super(props);
       this.inputRef = React.createRef();
