@@ -52,7 +52,7 @@ class Content extends React.Component {
               src="../../../assets/imgs/background.png"
               alt="Card-img"
             />
-            <div className={classes.imgCardOverlay}>
+            <div className={classes.buttonBackdrop}>
               <Button
                 className={classes.button}
                 variant="contained"
