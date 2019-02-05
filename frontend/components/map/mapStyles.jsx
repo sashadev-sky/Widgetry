@@ -114,8 +114,8 @@ const mapStyles = {
     left: "21px",
     font: "900",
     color: "gray",
-    ["@media (max-width:600px)"]: {
-      width: "130px"
+    ["@media (max-width:550px)"]: {
+      width: "135px"
     },
     ["@media (max-width:450px)"]: {
       width: "135px"
@@ -143,8 +143,25 @@ const mapStyles = {
       marginTop: "20px"
     }
   },
-  mapStyle: {
-    borderRadius: "10px"
+  searchInput: {
+    font: "400 20px 'Roboto', serif",
+    left: 27,
+    height: 67,
+    width: 200,
+    textOverflow: "ellipsis",
+    position: "absolute",
+    top: -3,
+    ["@media (max-width:1000px)"]: {
+      // left: "14px",
+    },
+    ["@media (max-width:550px)"]: {
+      font: "400 15px 'Roboto', serif",
+      width: "135px"
+    },
+    ["@media (max-width:450px)"]: {
+      font: "400 15px 'Roboto', serif",
+      width: "130px"
+    }
   }
 };
 

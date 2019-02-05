@@ -83,18 +83,6 @@ class CustomTabs extends React.Component {
             })}
           </Tabs>
         </CardHeader>
-        {/* <CardHeader
-          classes={{
-            root: cardHeader,
-            title: cardTitle,
-            content: classes.cardHeaderContent,
-            action: classes.cardHeaderAction
-          }}
-          title={title}
-          action={
-
-          }
-        /> */}
         <CardBody>
           {tabs.map((prop, key) => {
             if (key === this.state.value) {
@@ -107,10 +95,6 @@ class CustomTabs extends React.Component {
     );
   }
 }
-
-CustomTabs.defaultProps = {
-  headerColor: "purple"
-};
 
 CustomTabs.propTypes = {
   classes: PropTypes.object.isRequired,

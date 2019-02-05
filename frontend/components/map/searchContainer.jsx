@@ -52,7 +52,7 @@ export class SearchContainer extends Component {
               type="text" 
               ref={this.inputRef} 
               placeholder="Enter a city name" 
-              className="searchInput" 
+              className={classes.searchInput}
               role="combobox"
               aria-label="search"
               aria-autocomplete="list"

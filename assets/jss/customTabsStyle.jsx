@@ -1,8 +1,7 @@
-import { defaultFont } from "./material-kit-pro-react";
-
 const customTabsStyle = theme => ({
   cardTitle: {
-    ...defaultFont,
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontWeight: "300",
     float: "left",
     padding: "10px 10px 10px 0",
     lineHeight: "24px",
