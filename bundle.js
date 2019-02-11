@@ -1527,7 +1527,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_Grid_GridContainer__WEBPACK_IMPORTED_MODULE_5__["default"], _extends({
         className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.root, className)
       }, other), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_Parallax_Parallax__WEBPACK_IMPORTED_MODULE_11__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_4___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "wrap"
+        className: classes.wrap
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_Grid_GridItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
         xs: 12,
         sm: 3,
@@ -1535,7 +1535,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock_clock__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_Grid_GridItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
         xs: 12,
         sm: 6,
-        md: 6
+        md: 8
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs_tabs__WEBPACK_IMPORTED_MODULE_10__["default"], {
         panes: panes
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather_weather__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_calculator_calculator__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1553,7 +1553,13 @@ var styles = {
   root: {
     position: "relative",
     top: -20,
-    padding: "20px"
+    padding: 20
+  },
+  wrap: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around"
   }
 };
 App.propTypes = {
@@ -1858,7 +1864,8 @@ function (_React$Component) {
 var styles = {
   spacing: (_spacing = {
     marginLeft: "-15px",
-    marginTop: "30px"
+    marginTop: "30px",
+    marginBottom: "30px"
   }, _defineProperty(_spacing, "@media (max-width:599px)", {
     marginLeft: "25%"
   }), _defineProperty(_spacing, "@media (max-width:460px)", {
@@ -2658,7 +2665,8 @@ var styles = {
   spacing: {
     margin: "59px 5px",
     marginBottom: "0",
-    minWidth: "300px"
+    minWidth: "300px",
+    maxWidth: "350px"
   }
 };
 Tabs.propTypes = {
@@ -2757,11 +2765,16 @@ function (_React$Component) {
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.loader
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default.a, {
-            color: "primary"
+            color: "primary",
+            className: classes.progress
           }))));
 
         case false:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Please enable location services");
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: classes.message
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: classes.messageText
+          }, "Please enable location services"));
 
         default:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_Card_Card__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3075,23 +3088,25 @@ Weather.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var _cardSection, _cardMiddleSection;
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var weatherStyles = {
   spacing: {
-    margin: "30px 15px",
-    marginTop: "0",
-    maxWidth: "350px"
+    // margin: "30px 15px",
+    marginTop: 0,
+    maxWidth: "335px"
   },
   buttonBackdrop: {
     width: "100%",
     background: "black",
     opacity: "0.4",
     position: "absolute",
-    top: "0",
-    right: "0",
-    bottom: "0",
-    left: "0"
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
   },
   button: {
     background: "rgb(255, 222, 222)",
@@ -3099,9 +3114,8 @@ var weatherStyles = {
     border: 0,
     color: "black",
     height: 77,
-    padding: "0 30px",
     letterSpacing: "1.2px",
-    fontSize: "16px",
+    fontSize: 16,
     width: "58%",
     "&:hover": {
       "& $buttonBackdrop": {
@@ -3110,14 +3124,19 @@ var weatherStyles = {
     }
   },
   loader: {
-    marginLeft: "20px",
-    marginTop: "20px",
-    margin: "auto",
-    width: "450px"
+    display: "flex",
+    width: 300,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  progress: {
+    margin: "auto"
   },
   root: {
     color: "white",
-    fontSize: "15px"
+    fontSize: 15,
+    minWidth: "300px",
+    minHeight: "200px"
   },
   imgCard: {
     width: "100%",
@@ -3126,38 +3145,60 @@ var weatherStyles = {
   },
   imgCardOverlay: {
     position: "absolute",
-    top: "0",
-    right: "0",
-    bottom: "0",
-    left: "0",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
     padding: "1.25rem"
   },
   cardTitle: {
-    display: "inline",
-    color: "white"
+    display: "inline"
   },
   cardBody: {
-    fontWeight: "500",
+    fontWeight: 500,
     textShadow: "black 0px 0px 10px",
     padding: "0.9375rem 1.875rem",
     flex: "1 1 auto",
-    WebkitBoxFlex: "1"
+    WebkitBoxFlex: "1",
+    marginBottom: -10
   },
-  cardSection: {
-    marginTop: "10px"
-  },
-  cardMiddleSection: {
-    fontSize: "20px",
-    marginTop: "10px"
-  },
+  cardSection: (_cardSection = {
+    marginTop: 10
+  }, _defineProperty(_cardSection, "@media (max-width:700px)", {
+    // marginTop: 5,
+    fontSize: 13.5
+  }), _defineProperty(_cardSection, "@media (max-width:599px)", {
+    // marginTop: 5,
+    fontSize: 15
+  }), _cardSection),
+  cardMiddleSection: (_cardMiddleSection = {
+    fontSize: 20,
+    marginTop: 10
+  }, _defineProperty(_cardMiddleSection, "@media (max-width:700px)", {
+    // marginTop: 5,
+    fontSize: 15
+  }), _defineProperty(_cardMiddleSection, "@media (max-width:599px)", {
+    // marginTop: 5,
+    fontSize: 20
+  }), _cardMiddleSection),
   locIcon: _defineProperty({
     margin: "0px 5px",
-    width: "30px",
-    height: "32px"
+    width: 30
   }, "@media (max-width:600px)", {
-    width: "26px",
-    height: "26px"
-  })
+    width: 26
+  }),
+  message: _defineProperty({
+    marginTop: 100,
+    marginBottom: 100,
+    width: 350,
+    alignText: "center"
+  }, "@media (max-width:720px)", {
+    marginTop: 50,
+    marginBottom: 50
+  }),
+  messageText: {
+    marginLeft: 60
+  }
 };
 /* harmony default export */ __webpack_exports__["default"] = (weatherStyles);
 

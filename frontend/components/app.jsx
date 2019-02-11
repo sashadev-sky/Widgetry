@@ -49,11 +49,11 @@ class App extends React.Component {
       <GridContainer className={classNames(classes.root, className)} {...other}>
         <Parallax>
          <Paper >
-          <div className="wrap">
+          <div className={classes.wrap}>
             <GridItem xs={12} sm={3} md={3}>
               <Clock />
             </GridItem>
-            <GridItem xs={12} sm={6} md={6}>
+            <GridItem xs={12} sm={6} md={8}>
               <Tabs panes={panes} />
             </GridItem>
             <Weather />
@@ -71,7 +71,13 @@ const styles = {
   root: {
     position: "relative",
     top: -20,
-    padding: "20px"
+    padding: 20
+  },
+  wrap: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around"
   }
 };
 

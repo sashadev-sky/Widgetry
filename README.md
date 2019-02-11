@@ -4,7 +4,7 @@
 
 - Integrates various APIs onto a single platform for a user to have available at their fingertips
 
-- Responsive page with a user-centered design. Includes crowd-pleasing features
+- User-centered design that includes crowd-pleasing features
 such as parallax scrolling and a subtlely matching color palette. 
 
 Environment Setup:
@@ -94,13 +94,17 @@ On a very basic level:
 
 </details>
 
+<br>
+
 <details>
 
-<summary>typechecking with PropTypes</summary> <br>
+<summary>Typechecking with PropTypes</summary> <br>
 
 > "React has some built-in typechecking abilities. To run typechecking on the props for a component, you can assign the special propTypes property."
 
 </details>
+
+<br>
 
 - React with JSS for more powerful, declarative styling
 

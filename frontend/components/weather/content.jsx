@@ -35,15 +35,21 @@ class Content extends React.Component {
               src="../../../assets/imgs/background.png"
               alt="Card-img"
             />
-          <div className={classes.imgCardOverlay}>
-            <div className={classes.loader}>
-            <CircularProgress color="primary" />
-          </div>
-          </div>
+            <div className={classes.imgCardOverlay}>
+              <div className={classes.loader}>
+                <CircularProgress color="primary" className={classes.progress}/>
+              </div>
+            </div>
           </Card >
         );
       case false:
-        return <div>Please enable location services</div>;
+        return (
+          <div className={classes.message}>
+            <span className={classes.messageText}>
+              Please enable location services
+            </span>
+          </div>
+        );
       default:
         return (
           <Card className={classes.root}>
