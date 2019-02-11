@@ -19,13 +19,6 @@ button {
   margin: 0 auto;
 }
 
-/* .wrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-} */
-
 .pac-container {
   position: absolute!important;
 }

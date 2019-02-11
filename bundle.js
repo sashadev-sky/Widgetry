@@ -1817,12 +1817,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_analog_clock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-analog-clock */ "./node_modules/react-analog-clock/lib/index.js");
-/* harmony import */ var react_analog_clock__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_analog_clock__WEBPACK_IMPORTED_MODULE_3__);
-var _spacing;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+/* harmony import */ var _clockStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clockStyles */ "./frontend/components/clock/clockStyles.jsx");
+/* harmony import */ var react_analog_clock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-analog-clock */ "./node_modules/react-analog-clock/lib/index.js");
+/* harmony import */ var react_analog_clock__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_analog_clock__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1846,6 +1843,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Clock =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1860,11 +1858,12 @@ function (_React$Component) {
   _createClass(Clock, [{
     key: "render",
     value: function render() {
+      var classes = this.props.classes;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.props.classes.spacing
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_analog_clock__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        className: classes.spacing
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_analog_clock__WEBPACK_IMPORTED_MODULE_4___default.a, {
         width: 200,
-        theme: react_analog_clock__WEBPACK_IMPORTED_MODULE_3__["Themes"].lime
+        theme: react_analog_clock__WEBPACK_IMPORTED_MODULE_4__["Themes"].lime
       }));
     }
   }]);
@@ -1872,7 +1871,27 @@ function (_React$Component) {
   return Clock;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-var styles = {
+Clock.propTypes = {
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(_clockStyles__WEBPACK_IMPORTED_MODULE_3__["default"])(Clock));
+
+/***/ }),
+
+/***/ "./frontend/components/clock/clockStyles.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/clock/clockStyles.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var _spacing;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var clockStyles = {
   spacing: (_spacing = {
     marginLeft: "-15px",
     marginTop: "30px",
@@ -1883,10 +1902,7 @@ var styles = {
     marginLeft: "20%"
   }), _spacing)
 };
-Clock.propTypes = {
-  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(Clock));
+/* harmony default export */ __webpack_exports__["default"] = (clockStyles);
 
 /***/ }),
 
@@ -2592,6 +2608,30 @@ var Root = function Root() {
 
 /***/ }),
 
+/***/ "./frontend/components/tabs/tabStyles.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/tabs/tabStyles.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var tabStyles = {
+  textCenter: {
+    textAlign: "center"
+  },
+  spacing: {
+    margin: "59px 5px",
+    marginBottom: "0",
+    minWidth: "300px",
+    maxWidth: "350px"
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (tabStyles);
+
+/***/ }),
+
 /***/ "./frontend/components/tabs/tabs.jsx":
 /*!*******************************************!*\
   !*** ./frontend/components/tabs/tabs.jsx ***!
@@ -2607,7 +2647,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _assets_jss_customTabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/jss/customTabs */ "./assets/jss/customTabs.jsx");
+/* harmony import */ var _tabStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabStyles */ "./frontend/components/tabs/tabStyles.jsx");
+/* harmony import */ var _assets_jss_customTabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/jss/customTabs */ "./assets/jss/customTabs.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2625,6 +2666,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2659,7 +2701,7 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classes.spacing
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_customTabs__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_customTabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
         headerColor: "success",
         tabs: tabs
       }));
@@ -2669,21 +2711,10 @@ function (_React$Component) {
   return Tabs;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-var styles = {
-  textCenter: {
-    textAlign: "center"
-  },
-  spacing: {
-    margin: "59px 5px",
-    marginBottom: "0",
-    minWidth: "300px",
-    maxWidth: "350px"
-  }
-};
 Tabs.propTypes = {
   classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(Tabs));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(_tabStyles__WEBPACK_IMPORTED_MODULE_3__["default"])(Tabs));
 
 /***/ }),
 
