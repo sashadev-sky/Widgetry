@@ -32,7 +32,7 @@ class Content extends React.Component {
           <Card className={classes.root}>
             <img
               className={classes.imgCard}
-              src={"../../../assets/imgs/background.png"}
+              src={require("../../../assets/imgs/background.png")}
               alt="Card-img"
             />
             <div className={classes.imgCardOverlay}>
@@ -55,7 +55,7 @@ class Content extends React.Component {
           <Card className={classes.root}>
             <img
               className={classes.imgCard}
-              src={"../../../assets/imgs/background.png"}
+              src={require("../../../assets/imgs/background.png")}
               alt="Card-img"
             />
             <div className={classes.buttonBackdrop}>
@@ -113,7 +113,7 @@ class Content extends React.Component {
       <Card className={classes.root}>
         <img
           className={classes.imgCard}
-          src={'../../../assets/imgs/background.png'}
+          src={require('../../../assets/imgs/background.png')}
           alt="Card-img"
         />
         <div className={classes.imgCardOverlay}>

@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/imgs/background.png":
+/*!************************************!*\
+  !*** ./assets/imgs/background.png ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "187bcb4e73e64766d2e3d73847722d4d.png";
+
+/***/ }),
+
 /***/ "./assets/jss/Card/Card.jsx":
 /*!**********************************!*\
   !*** ./assets/jss/Card/Card.jsx ***!
@@ -2758,7 +2769,7 @@ function (_React$Component) {
             className: classes.root
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: classes.imgCard,
-            src: "../../../assets/imgs/background.png",
+            src: __webpack_require__(/*! ../../../assets/imgs/background.png */ "./assets/imgs/background.png"),
             alt: "Card-img"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.imgCardOverlay
@@ -2781,7 +2792,7 @@ function (_React$Component) {
             className: classes.root
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: classes.imgCard,
-            src: "../../../assets/imgs/background.png",
+            src: __webpack_require__(/*! ../../../assets/imgs/background.png */ "./assets/imgs/background.png"),
             alt: "Card-img"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.buttonBackdrop
@@ -2859,7 +2870,7 @@ function (_React$Component) {
         className: classes.root
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: classes.imgCard,
-        src: '../../../assets/imgs/background.png',
+        src: __webpack_require__(/*! ../../../assets/imgs/background.png */ "./assets/imgs/background.png"),
         alt: "Card-img"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classes.imgCardOverlay
