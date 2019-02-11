@@ -16,6 +16,8 @@ let main;
 let sunrisetime;
 let sunsettime;
 
+import img1 from "../../../assets/imgs/background.png"
+
 class Content extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +34,7 @@ class Content extends React.Component {
           <Card className={classes.root}>
             <img
               className={classes.imgCard}
-              src={require("../../../assets/imgs/background.png")}
+              src={img1}
               alt="Card-img"
             />
             <div className={classes.imgCardOverlay}>
@@ -55,7 +57,7 @@ class Content extends React.Component {
           <Card className={classes.root}>
             <img
               className={classes.imgCard}
-              src={require("../../../assets/imgs/background.png")}
+              src={img1}
               alt="Card-img"
             />
             <div className={classes.buttonBackdrop}>
@@ -113,7 +115,7 @@ class Content extends React.Component {
       <Card className={classes.root}>
         <img
           className={classes.imgCard}
-          src={require('../../../assets/imgs/background.png')}
+          src={img1}
           alt="Card-img"
         />
         <div className={classes.imgCardOverlay}>
