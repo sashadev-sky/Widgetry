@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/imgs/background.png":
-/*!************************************!*\
-  !*** ./assets/imgs/background.png ***!
-  \************************************/
+/***/ "./187bcb4e73e64766d2e3d73847722d4d.png":
+/*!**********************************************!*\
+  !*** ./187bcb4e73e64766d2e3d73847722d4d.png ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "187bcb4e73e64766d2e3d73847722d4d.png";
+module.exports = __webpack_require__.p + "images/187bcb4e73e64766d2e3d73847722d4d-187bcb4e73e64766d2e3d73847722d4d.png";
 
 /***/ }),
 
@@ -2711,8 +2711,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_LocationOn__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LocationOn__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _assets_jss_Card_Card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../assets/jss/Card/Card */ "./assets/jss/Card/Card.jsx");
 /* harmony import */ var _weatherStyles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./weatherStyles */ "./frontend/components/weather/weatherStyles.jsx");
-/* harmony import */ var _assets_imgs_background_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../assets/imgs/background.png */ "./assets/imgs/background.png");
-/* harmony import */ var _assets_imgs_background_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_imgs_background_png__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _187bcb4e73e64766d2e3d73847722d4d_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../187bcb4e73e64766d2e3d73847722d4d.png */ "./187bcb4e73e64766d2e3d73847722d4d.png");
+/* harmony import */ var _187bcb4e73e64766d2e3d73847722d4d_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_187bcb4e73e64766d2e3d73847722d4d_png__WEBPACK_IMPORTED_MODULE_9__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2772,7 +2772,7 @@ function (_React$Component) {
             className: classes.root
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: classes.imgCard,
-            src: _assets_imgs_background_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+            src: _187bcb4e73e64766d2e3d73847722d4d_png__WEBPACK_IMPORTED_MODULE_9___default.a,
             alt: "Card-img"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.imgCardOverlay
@@ -2795,7 +2795,7 @@ function (_React$Component) {
             className: classes.root
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: classes.imgCard,
-            src: _assets_imgs_background_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+            src: _187bcb4e73e64766d2e3d73847722d4d_png__WEBPACK_IMPORTED_MODULE_9___default.a,
             alt: "Card-img"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.buttonBackdrop
@@ -2873,7 +2873,7 @@ function (_React$Component) {
         className: classes.root
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: classes.imgCard,
-        src: _assets_imgs_background_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+        src: _187bcb4e73e64766d2e3d73847722d4d_png__WEBPACK_IMPORTED_MODULE_9___default.a,
         alt: "Card-img"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classes.imgCardOverlay

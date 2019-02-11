@@ -16,7 +16,7 @@ let main;
 let sunrisetime;
 let sunsettime;
 
-import img1 from "../../../assets/imgs/background.png"
+import img1 from "../../../187bcb4e73e64766d2e3d73847722d4d.png";
 
 class Content extends React.Component {
   constructor(props) {

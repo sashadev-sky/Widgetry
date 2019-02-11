@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@types/googlemaps": "^3.30.16",
-    "file-loader": "^3.0.1"
+    "file-loader": "^3.0.1",
+    "url-loader": "^1.1.2"
   }
 }
