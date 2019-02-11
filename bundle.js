@@ -2859,7 +2859,7 @@ function (_React$Component) {
         className: classes.root
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: classes.imgCard,
-        src: "../../../assets/imgs/background.png",
+        src: '../../../assets/imgs/background.png',
         alt: "Card-img"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classes.imgCardOverlay
