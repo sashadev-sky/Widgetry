@@ -53,7 +53,7 @@ class App extends React.Component {
             <GridItem xs={12} sm={3} md={3}>
               <Clock />
             </GridItem>
-            <GridItem xs={12} sm={6} md={8}>
+            <GridItem xs={12} sm={6} md={6}>
               <Tabs panes={panes} />
             </GridItem>
             <Weather />

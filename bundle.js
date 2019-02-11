@@ -1546,7 +1546,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock_clock__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_jss_Grid_GridItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
         xs: 12,
         sm: 6,
-        md: 8
+        md: 6
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs_tabs__WEBPACK_IMPORTED_MODULE_10__["default"], {
         panes: panes
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather_weather__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_calculator_calculator__WEBPACK_IMPORTED_MODULE_7__["default"], {
