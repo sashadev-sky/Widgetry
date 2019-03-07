@@ -29,7 +29,7 @@ Environment Setup:
 
 ## Weather Widget
 
-- Uses the Geolocation API to update the weather based on the user's current location
+- Uses the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) to update the weather based on the user's current location
 
 - Uses the XMLHttpRequest object to make asynchronous HTTP requests to the [OpenWeatherMap API](https://openweathermap.org/)
 
