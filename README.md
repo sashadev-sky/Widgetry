@@ -31,7 +31,7 @@ Environment Setup:
 
 - Uses the Geolocation API to update the weather based on the user's current location
 
-- Uses the XMLHttpRequest object to make asynchronous HTTP requests to the [Open Weather API](https://openweathermap.org/)
+- Uses the XMLHttpRequest object to make asynchronous HTTP requests to the [OpenWeatherMap API](https://openweathermap.org/)
 
 - Follows the W3C standard to only access user location upon user gesture
 
