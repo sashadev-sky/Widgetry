@@ -5,7 +5,7 @@
 - Integrates various APIs onto a single platform for a user to have available at their fingertips
 
 - User-centered design that includes crowd-pleasing features
-such as parallax scrolling and a subtlely matching color palette. 
+such as parallax scrolling and a subtly matching color palette. 
 
 Environment Setup:
   - React
