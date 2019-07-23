@@ -1,15 +1,26 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: "production",
   context: __dirname,
   entry: "./frontend/widgets.jsx",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, './dist'),
     filename: "bundle.js",
     devtoolModuleFilenameTemplate: "[resourcePath]",
     devtoolFallbackModuleFilenameTemplate: "[resourcePath]?[hash]"
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // all options are optional
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }),
+  ],
   module: {
     rules: [
       {
@@ -22,6 +33,10 @@ module.exports = {
             presets: ["@babel/env", "@babel/react"]
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,

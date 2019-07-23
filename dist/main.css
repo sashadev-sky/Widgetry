@@ -1,0 +1,54 @@
+html, body, header, nav, h1, a, ul, li, strong, main, button, i, section, img, div, h2, p, form, fieldset, label, input, textarea, span, article, footer, time, small {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  background: transparent;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  transform: initial;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 200%;
+  height: auto;
+}
+
+body {
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  background: #dddddd
+}
+
+div {
+  box-sizing: content-box !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+#main {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.pac-container {
+  position: absolute!important;
+}
+
+
+
+
+
+
+/*# sourceMappingURL=main.css.map*/
