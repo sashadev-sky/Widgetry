@@ -132,7 +132,6 @@ class Content extends React.Component {
           <div className={classes.cardSection}>
             <p>Sunrise: {sunrisetime}</p>
             <p>Sunset: {sunsettime}</p>
-            <p>Feels like: {main}</p>
           </div>
         </div>
         </div>
