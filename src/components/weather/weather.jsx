@@ -52,7 +52,7 @@ class Weather extends React.Component {
 
   buildRequestUrl() {
     let { locData } = this.state;
-    let url = "http://api.openweathermap.org/data/2.5/weather?";
+    let url = "https://api.openweathermap.org/data/2.5/weather?";
     let [lat, lon] = [locData.coords.latitude, locData.coords.longitude];
 
     url += toQueryString({lat, lon});
