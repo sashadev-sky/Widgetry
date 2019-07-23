@@ -8,7 +8,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: "production",
   context: __dirname,
-  entry: "./frontend/widgets.jsx",
+  entry: "./src/index.jsx",
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: "bundle.js",
