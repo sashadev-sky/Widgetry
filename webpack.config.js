@@ -1,10 +1,11 @@
 const path = require('path');
 
 module.exports = {
+  mode: "production",
   context: __dirname,
   entry: "./frontend/widgets.jsx",
   output: {
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     devtoolModuleFilenameTemplate: "[resourcePath]",
     devtoolFallbackModuleFilenameTemplate: "[resourcePath]?[hash]"
