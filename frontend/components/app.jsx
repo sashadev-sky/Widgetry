@@ -14,7 +14,7 @@ import Clock from "./clock/clock";
 import Tabs from "./tabs/tabs";
 
 import Parallax from "../../assets/jss/Parallax/Parallax";
-import MapContainer from "./map/mapComponent";
+import MapContainer from "./map/MapComponent";
 
 const panes = [
   {

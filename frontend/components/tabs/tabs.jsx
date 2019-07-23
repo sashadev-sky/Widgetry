@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import tabStyles from "./tabStyles";
 
-import CustomTabs from "../../../assets/jss/customTabs";
+import CustomTabs from "../../../assets/jss/CustomTabs";
 
 class Tabs extends React.Component {
 
