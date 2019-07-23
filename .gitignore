@@ -1,4 +1,5 @@
 /dist/
+/node_modules/
 bundle.js.map
 /secret/
 /187bcb4e73e64766d2e3d73847722d4d.png
