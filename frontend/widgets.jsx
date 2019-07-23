@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 
 import Root from "./components/root";
 
-import "./css/reset.css";
-import "./css/index.css";
+import "./reset.css";
+import "./index.css";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("main");

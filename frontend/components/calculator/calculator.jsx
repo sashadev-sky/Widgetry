@@ -4,6 +4,8 @@ import InputPanel from './inputPanel'
 import ButtonPanel from "./buttonPanel";
 import { calculate } from "../../util/calculate";
 
+import './calculator.css';
+
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
