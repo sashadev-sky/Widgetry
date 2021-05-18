@@ -1,21 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
-import { toQueryString } from "../../util/weather_utils";
+import { toQueryString } from '../../util/weather_utils';
 
-import Content from "./content";
+import Content from './content';
 
-import weatherStyles from "./weatherStyles"
+import weatherStyles from './weatherStyles';
 
 class Weather extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locData: "",
-      locSupport: "",
-      weatherData: "",
-      weatherSupport: ""
+      locData: '',
+      locSupport: '',
+      weatherData: '',
+      weatherSupport: '',
     };
 
     this.setLocSupport = this.setLocSupport.bind(this);
@@ -24,7 +24,7 @@ class Weather extends React.Component {
   }
 
   setLocSupport() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       this.setState({ locSupport: true }, () => {
         this.locateMe();
       });
@@ -52,12 +52,12 @@ class Weather extends React.Component {
 
   buildRequestUrl() {
     let { locData } = this.state;
-    let url = "https://api.openweathermap.org/data/2.5/weather?";
+    let url = 'https://api.openweathermap.org/data/2.5/weather?';
     let [lat, lon] = [locData.coords.latitude, locData.coords.longitude];
 
-    url += toQueryString({lat, lon});
+    url += toQueryString({ lat, lon });
     // this is a free api key
-    const apiKey = "7d76a2fe8b283b85014d6ca60b8a369d";
+    const apiKey = '7d76a2fe8b283b85014d6ca60b8a369d';
     url += `&APPID=${apiKey}`;
     return url;
   }
@@ -67,7 +67,7 @@ class Weather extends React.Component {
     const parsedData = JSON.parse(data);
     this.setState({
       weatherData: parsedData,
-      weatherSupport: boolean
+      weatherSupport: boolean,
     });
   }
 
@@ -86,7 +86,7 @@ class Weather extends React.Component {
       this.setWeatherState(xmlhttp, boolean);
     };
 
-    xmlhttp.open("GET", reqUrl, true);
+    xmlhttp.open('GET', reqUrl, true);
     xmlhttp.send();
   }
 
@@ -108,7 +108,7 @@ class Weather extends React.Component {
 }
 
 Weather.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(weatherStyles)(Weather);

@@ -1,33 +1,29 @@
-import React from "react";
+import React from 'react';
 
-import InputPanel from './inputPanel'
-import ButtonPanel from "./buttonPanel";
-import { calculate } from "../../util/calculate";
+import { InputPanel } from './inputPanel'
+import { ButtonPanel } from './buttonPanel';
+import { calculate } from '../../util/calculate';
 
 import './calculator.css';
 
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      result: '', 
-      num1: '', 
-      num2: '', 
-      tooltipVal: '', 
+    this.state = {
+      result: '',
+      num1: '',
+      num2: '',
+      tooltipVal: '',
       tooltipDisplay: 'none'
     };
-
-    this.setNums = this.setNums.bind(this);
-    this.calcResult = this.calcResult.bind(this);
-    this.clearInput = this.clearInput.bind(this);
   }
 
-  setNums(e) {
+  setNums = (e) => {
     let name = e.currentTarget.name;
     this.setState({ [name]: e.currentTarget.value });
   }
 
-  calcResult(e) {
+  calcResult = (e) => {
     let name = e.currentTarget.name;
     let calresult = calculate(this.state.num1, this.state.num2, name)
     let result = `${calresult.result}`;
@@ -39,37 +35,36 @@ class Calculator extends React.Component {
     }
     this.setState(calresult);
   }
-  
 
-  clearInput(e) {
+  clearInput = (e) => {
     e.preventDefault();
-    this.setState({ num1: "", num2: "", result: "", tooltip: "" });
+    this.setState({ num1: '', num2: '', result: '', tooltip: '' });
   }
 
   render() {
     const { num1, num2, result, tooltipDisplay, tooltipVal } = this.state;
     return (
-      <div className="calcComponent" >
-        <div className="calculator">
+      <div className='calcComponent'>
+        <div className='calculator'>
           <div className='output-con'>
           <p className="output">{result}
-            <span 
-              className="tooltiptext" 
+            <span
+              className='tooltiptext'
               style={{display: `${tooltipDisplay}`}}>
               {tooltipVal}
             </span>
           </p>
-          <InputPanel 
-            changeHandler={this.setNums} 
-            num1={num1} 
-            num2={num2} 
+          <InputPanel
+            changeHandler={this.setNums}
+            num1={num1}
+            num2={num2}
           />
           <ButtonPanel clickHandler={this.calcResult} />
           <button
-            className="resetButton"
-            name="clear"
+            className='resetButton'
+            name='clear'
             onClick={this.clearInput}
-            aria-label="clear" 
+            aria-label='clear'
           >
             AC
           </button>

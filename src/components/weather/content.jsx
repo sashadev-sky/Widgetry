@@ -1,28 +1,28 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import { extractData, dateConverter } from '../../util/weather_utils'
+import { extractData, dateConverter } from '../../util/weather_utils';
 
-import { withStyles } from "@material-ui/core/styles";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Button from "@material-ui/core/Button";
-import LocationIcon from "@material-ui/icons/LocationOn";
-import Card from "../../../assets/jss/Card/Card";
+import { withStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from '@material-ui/core/Button';
+import LocationIcon from '@material-ui/icons/LocationOn';
+import Card from '../../../assets/jss/Card/Card';
 
-import weatherStyles from "./weatherStyles";
+import weatherStyles from './weatherStyles';
 
 let description;
 let main;
 let sunrisetime;
 let sunsettime;
 
-import img1 from "../../images/weather-b.jpg";
+import img1 from '../../images/weather-b.jpg';
 
 class Content extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: ""
+      date: '',
     };
   }
 
@@ -32,17 +32,16 @@ class Content extends React.Component {
       case true:
         return (
           <Card className={classes.root}>
-            <img
-              className={classes.imgCard}
-              src={img1}
-              alt="Card-img"
-            />
+            <img className={classes.imgCard} src={img1} alt='Card-img' />
             <div className={classes.imgCardOverlay}>
               <div className={classes.loader}>
-                <CircularProgress color="primary" className={classes.progress}/>
+                <CircularProgress
+                  color='primary'
+                  className={classes.progress}
+                />
               </div>
             </div>
-          </Card >
+          </Card>
         );
       case false:
         return (
@@ -55,16 +54,12 @@ class Content extends React.Component {
       default:
         return (
           <Card className={classes.root}>
-            <img
-              className={classes.imgCard}
-              src={img1}
-              alt="Card-img"
-            />
+            <img className={classes.imgCard} src={img1} alt='Card-img' />
             <div className={classes.buttonBackdrop}>
               <Button
                 className={classes.button}
-                variant="contained"
-                color="default"
+                variant='contained'
+                color='default'
                 onClick={() => setSupport()}
               >
                 Fetch Weather
@@ -113,27 +108,24 @@ class Content extends React.Component {
 
     return (
       <Card className={classes.root}>
-        <img
-          className={classes.imgCard}
-          src={img1}
-          alt="Card-img"
-        />
+        <img className={classes.imgCard} src={img1} alt='Card-img' />
         <div className={classes.imgCardOverlay}>
           <LocationIcon className={classes.locIcon} />
-          <h4 
-            className={classes.cardTitle}>
-            {weatherData.name}
-          </h4>
+          <h4 className={classes.cardTitle}>{weatherData.name}</h4>
           <div className={classes.cardBody}>
-            <p>{weekday} - {month} {day}</p>
-          <div className={classes.cardMiddleSection}>
-            <p>{main} {description}</p>
+            <p>
+              {weekday} - {month} {day}
+            </p>
+            <div className={classes.cardMiddleSection}>
+              <p>
+                {main} {description}
+              </p>
+            </div>
+            <div className={classes.cardSection}>
+              <p>Sunrise: {sunrisetime}</p>
+              <p>Sunset: {sunsettime}</p>
+            </div>
           </div>
-          <div className={classes.cardSection}>
-            <p>Sunrise: {sunrisetime}</p>
-            <p>Sunset: {sunsettime}</p>
-          </div>
-        </div>
         </div>
       </Card>
     );
@@ -141,7 +133,7 @@ class Content extends React.Component {
 }
 
 Content.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(weatherStyles)(Content);

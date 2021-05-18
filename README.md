@@ -1,23 +1,45 @@
 # React Widgetry
 
-- Fully responsive set of reusable components made with React 
+- Fully responsive set of reusable components made with React
 
 - Integrates various APIs onto a single platform for a user to have available at their fingertips
 
 - User-centered design that includes crowd-pleasing features
-such as parallax scrolling and a subtly matching color palette. 
+such as parallax scrolling and a subtly matching color palette.
 
-Environment Setup:
-  - React
-  - Node
-  - Babel
-  - Webpack
+## Environment:
+
+* React 16.14.0 (Framework)
+
+* Node 16.1.0 (Environment)
+
+* npm 7.13.0 (Package Manager)
+
+* Webpack 5.x (Bundler)
+
+* Babel 7.x (Transpiler)
+
+## Setup
+
+In the project directory, you can run:
+
+**Development**
+
+* `npm install` - Install dependencies
+
+* `npm run start` - Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
+
+**Production**
+
+* `npm run build` - Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified.
+
+* `npm run serve` - Serves the production build.
 
 ## Clock Widget
 
 - Analog clock component
 
-## Tabs Widget 
+## Tabs Widget
 
 - Interactive tabs widget that updates panes
 
@@ -35,7 +57,6 @@ Environment Setup:
 
 - Follows the W3C standard to only access user location upon user gesture
 
-
 <details><summary><strong>Geolocation API</strong></summary>
 
 On a very basic level:
@@ -43,8 +64,8 @@ On a very basic level:
   1. Check if Geolocation is supported:
 
   ```JavaScript
-  if ("geolocation" in navigator) { 
-  // geolocation is available 
+  if ("geolocation" in navigator) {
+  // geolocation is available
   } else {
   // geolocation IS NOT available
   }
@@ -63,23 +84,23 @@ On a very basic level:
 
 - Uses a wrapper to integrate the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) with React.
 
-- Uses the [Google Places API](https://developers.google.com/places/web-service/intro) to allow dynamic querying of cities all over the world on an interactive and responsive map. 
+- Uses the [Google Places API](https://developers.google.com/places/web-service/intro) to allow dynamic querying of cities all over the world on an interactive and responsive map.
 
 - Does not start off in your current location - it's meant for looking around
 
 - Standard Google map Features implemented:
-  
+
   - Autocomplete functionality for queries
 
   - Location markers corresponding with information windows containing location data
 
-- Additional Custom features extending the API: 
+- Additional Custom features extending the API:
 
   - Customized UI layer
 
   - Ability to toggle search bar for a full map view
 
-  - Home button to always return the map to a set origin 
+  - Home button to always return the map to a set origin
 
 <br>
 
@@ -113,13 +134,11 @@ On a very basic level:
 
 - Lifecycle methods
 
-
-##### 2. Tabs: 
+##### 2. Tabs:
 
 - Extracting components
 
 - Lists and Keys
-
 
 ##### 3. Calculator:
 
@@ -132,5 +151,3 @@ On a very basic level:
 - Refs
 
 - Integrating third-party libraries
-
-

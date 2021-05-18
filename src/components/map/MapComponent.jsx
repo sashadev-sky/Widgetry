@@ -52,7 +52,7 @@ class MapContainer extends Component {
   onSearchClick = () => {
     if (this.state.ref) this.clearTextField(this.state.ref);
     let disp = this.state.searchDisplay === 0 ? -10 : 0
-    this.setState(state => ({ 
+    this.setState(state => ({
       searchDisplay: disp
     }));
   }
@@ -64,12 +64,12 @@ class MapContainer extends Component {
 
   onHomeClick = () => {
     let initial = MapContainer.INITIAL;
-    this.setState(state => ({ 
-      center: initial.center, 
-      zoom: initial.zoom, 
-      showingMarker: false, 
-      selectedPlace: {}, 
-      showingInfoWindow: false 
+    this.setState(state => ({
+      center: initial.center,
+      zoom: initial.zoom,
+      showingMarker: false,
+      selectedPlace: {},
+      showingInfoWindow: false
     }));
   }
 

@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React, { createRef, Component } from 'react';
 
 import ClearIcon from '@material-ui/icons/Clear';
-import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
 
-import mapStyles from "./mapStyles";
+import mapStyles from './mapStyles';
 
 class SearchContainer extends Component {
   constructor(props) {
     super(props);
-      this.inputRef = React.createRef();
+      this.inputRef = createRef();
   }
 
   componentDidMount() {
@@ -42,30 +42,30 @@ class SearchContainer extends Component {
 
   render() {
     const { searchDisplay, classes, clickHandler } = this.props;
-  
+
     return (
-      <div className={classes.sidebar} role="search" style={{ zIndex: `${searchDisplay}` }}>
+      <div className={classes.sidebar} role='search' style={{ zIndex: `${searchDisplay}` }}>
         <Paper className={classes.searchBar} >
           <form onSubmit={this.handleSubmit}>
-            <input 
-              type="text" 
-              ref={this.inputRef} 
-              placeholder="Enter a city name" 
+            <input
+              type='text'
+              ref={this.inputRef}
+              placeholder='Enter a city name'
               className={classes.searchInput}
-              role="combobox"
-              aria-label="search"
-              aria-autocomplete="list"
-              aria-controls="search-results"
+              role='combobox'
+              aria-label='search'
+              aria-autocomplete='list'
+              aria-controls='search-results'
             />
-              <IconButton 
-                aria-label="clear" 
-                className={classes.clearButton} 
+              <IconButton
+                aria-label='clear'
+                className={classes.clearButton}
                 onClick={(e) => clickHandler(this.inputRef, e)}>
               <ClearIcon className={classes.clearicon} />
               </IconButton>
             <Divider className={classes.searchBarDivider} />
             </form>
-          </Paper> 
+          </Paper>
       </div>
     );
   }

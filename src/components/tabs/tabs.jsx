@@ -11,7 +11,7 @@ class Tabs extends React.Component {
   render() {
     const { panes, classes } = this.props;
     const tabs = panes.map(pane => (
-      { 
+      {
         key: pane.id,
         tabName: pane.title,
         tabContent: (

@@ -5,10 +5,10 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
-import HomeIcon from "@material-ui/icons/Home";
-import Divider from "@material-ui/core/Divider";
+import HomeIcon from '@material-ui/icons/Home';
+import Divider from '@material-ui/core/Divider';
 
-import mapStyles from "./mapStyles"
+import mapStyles from './mapStyles'
 
 class Controls extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Controls extends React.Component {
       const { classes, onSearchClick, onHomeClick } = this.props;
     return (
       <Paper className={classes.root} >
-      <IconButton aria-label="Search" onClick={() => onSearchClick()}>
+      <IconButton aria-label='Search' onClick={() => onSearchClick()}>
         <SearchIcon className={classes.icon} />
       </IconButton>
       <Divider className={classes.divider} />
@@ -29,7 +29,7 @@ class Controls extends React.Component {
       </Paper>
     );
   }
-} 
+}
 
 Controls.propTypes = {
   classes: PropTypes.object.isRequired,
