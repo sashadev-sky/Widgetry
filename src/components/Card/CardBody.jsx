@@ -1,21 +1,14 @@
-import React from "react";
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import classNames from "classnames";
-import PropTypes from "prop-types";
-
-import withStyles from "@material-ui/core/styles/withStyles";
-
+import { withStyles } from '@material-ui/core/styles';
 
 function CardBody({ ...props }) {
-  const {
-    classes,
-    className,
-    children,
-    ...rest
-  } = props;
+  const { classes, className, children, ...rest } = props;
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,
-    [className]: className !== undefined
+    [className]: className !== undefined,
   });
   return (
     <div className={cardBodyClasses} {...rest}>
@@ -26,9 +19,9 @@ function CardBody({ ...props }) {
 
 const cardBodyStyle = {
   cardBody: {
-    padding: "0.9375rem 1.875rem",
-    flex: "1 1 auto",
-    WebkitBoxFlex: "1"
+    padding: '0.9375rem 1.875rem',
+    flex: '1 1 auto',
+    WebkitBoxFlex: '1',
   },
 };
 

@@ -1,4 +1,4 @@
-const cardStyle = {
+export const cardStyle = {
   card: {
     border: "1px solid black",
     marginBottom: "30px",
@@ -98,5 +98,3 @@ const cardStyle = {
     color: "#FFFFFF"
   }
 };
-
-export default cardStyle;

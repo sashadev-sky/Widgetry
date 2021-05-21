@@ -6,17 +6,15 @@ import { calculate } from '../../util/calculate';
 
 import './calculator.css';
 
+
 class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      result: '',
-      num1: '',
-      num2: '',
-      tooltipVal: '',
-      tooltipDisplay: 'none'
-    };
-  }
+  state = {
+    result: '',
+    num1: '',
+    num2: '',
+    tooltipVal: '',
+    tooltipDisplay: 'none'
+  };
 
   setNums = (e) => {
     let name = e.currentTarget.name;

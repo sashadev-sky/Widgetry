@@ -5,8 +5,8 @@ import {
   infoCardHeader,
   primaryCardHeader,
   roseCardHeader
-} from "../material-kit-react";
-const cardHeaderStyle = {
+} from "./material-kit-react";
+export const cardHeaderStyle = {
   cardHeader: {
     borderRadius: "3px",
     padding: "1rem 15px",
@@ -66,5 +66,3 @@ const cardHeaderStyle = {
   primaryCardHeader,
   roseCardHeader
 };
-
-export default cardHeaderStyle;

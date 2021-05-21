@@ -7,9 +7,10 @@ import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
 import LocationIcon from '@material-ui/icons/LocationOn';
-import Card from '../../../assets/jss/Card/Card';
 
-import weatherStyles from './weatherStyles';
+import Card from '../Card/Card';
+
+import { weatherStyles } from './weatherStyles';
 
 let description;
 let main;
@@ -19,12 +20,9 @@ let sunsettime;
 import img1 from '../../images/weather-b.jpg';
 
 class Content extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: '',
-    };
-  }
+  state = {
+    date: '',
+  };
 
   noWeatherData = () => {
     const { locSupport, classes, setSupport } = this.props;

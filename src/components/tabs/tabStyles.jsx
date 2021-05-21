@@ -1,4 +1,4 @@
-const tabStyles = {
+export const tabStyles = {
   textCenter: {
     textAlign: "center"
   },
@@ -9,5 +9,3 @@ const tabStyles = {
     maxWidth: "350px"
   }
 };
-
-export default tabStyles;

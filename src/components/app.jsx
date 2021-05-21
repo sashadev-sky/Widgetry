@@ -5,16 +5,14 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
-import GridContainer from '../../assets/jss/Grid/GridContainer';
-import GridItem from '../../assets/jss/Grid/GridItem';
-
-import Calculator from './calculator/calculator';
-import Weather from './weather/weather';
-import Clock from './clock/clock';
-import Tabs from './tabs/tabs';
-
-import Parallax from '../../assets/jss/Parallax/Parallax';
-import MapContainer from './map/MapComponent';
+import GridContainer from './Grid/GridContainer';
+import GridItem from './Grid/GridItem';
+import Calculator from './Calculator/Calculator';
+import Weather from './Weather/Weather';
+import Clock from './Clock/Clock';
+import Tabs from './Tabs/Tabs';
+import Parallax from './Parallax/Parallax';
+import MapContainer from './Map/MapComponent';
 
 const panes = [
   {
@@ -37,35 +35,28 @@ const panes = [
   },
 ];
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { classes, children, className, ...other } = this.props;
-
-    return (
-      <GridContainer className={classNames(classes.root, className)} {...other}>
-        <Parallax>
-          <Paper>
-            <div className={classes.wrap}>
-              <GridItem xs={12} sm={3} md={3}>
-                <Clock />
-              </GridItem>
-              <GridItem xs={12} sm={6} md={6}>
-                <Tabs panes={panes} />
-              </GridItem>
-              <Weather />
-              <Calculator xs={12} sm={12} md={12} />
-            </div>
-          </Paper>
-        </Parallax>
-        <MapContainer />
-      </GridContainer>
-    );
-  }
-}
+const App = props => {
+  const { classes, children, className, ...other } = props;
+  return (
+    <GridContainer className={classNames(classes.root, className)} {...other}>
+      <Parallax>
+        <Paper>
+          <div className={classes.wrap}>
+            <GridItem xs={12} sm={3} md={3}>
+              <Clock />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={6}>
+              <Tabs panes={panes} />
+            </GridItem>
+            <Weather />
+            <Calculator xs={12} sm={12} md={12} />
+          </div>
+        </Paper>
+      </Parallax>
+      <MapContainer />
+    </GridContainer>
+  );
+};
 
 const styles = {
   root: {

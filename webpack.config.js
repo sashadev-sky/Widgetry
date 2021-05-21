@@ -3,7 +3,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const devMode = process.env.NODE_ENV !== 'production';
+const cssRegex = /\.css$/;
 
 module.exports = {
   mode: 'production',
@@ -16,7 +18,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
     new MiniCssExtractPlugin({
-      // {
       // Options similar to the same options in webpackOptions.output
       // all options are optional
       filename: devMode ? '[name].css' : '[name].[contenthash].css',
@@ -36,28 +37,16 @@ module.exports = {
             // into invalid ecma 5 code. This is why the `compress` and `output`
             ecma: 8,
           },
-          compress: {
-            ecma: 5,
-            inline: 2,
-          },
-          mangle: {
-            // Find work around for Safari 10+
-            safari10: true,
-          },
-          output: {
-            ecma: 5,
-            comments: false,
-          },
+          compress: { ecma: 5, inline: 2 },
+          mangle: { safari10: true },
+          output: { ecma: 5, comments: false },
         },
         // Use multi-process parallel running to improve the build speed
         parallel: true,
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          },
+          map: { inline: false, annotation: true },
         },
       }),
     ],
@@ -67,10 +56,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        include: [
-          path.resolve(__dirname, './src'),
-          path.resolve(__dirname, './assets'),
-        ],
+        include: [path.resolve(__dirname, './src')],
         use: {
           loader: 'babel-loader',
           options: {
@@ -84,7 +70,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: cssRegex,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {

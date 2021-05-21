@@ -1,4 +1,4 @@
-const weatherStyles = {
+export const weatherStyles = {
   spacing: {
     // margin: "30px 15px",
     marginTop: 0,
@@ -112,5 +112,3 @@ const weatherStyles = {
     marginLeft: 60
   }
 };
-
-export default weatherStyles;

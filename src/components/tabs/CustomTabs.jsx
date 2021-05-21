@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import { withStyles } from '@material-ui/core/styles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
-import Card from "./Card/Card";
-import CardBody from "./Card/CardBody";
-import CardHeader from "./Card/CardHeader";
-import customTabsStyle from "./customTabsStyle";
+import Card from '../Card/Card';
+import CardBody from '../Card/CardBody';
+import CardHeader from '../Card/CardHeader';
+import { customTabsStyle } from './CustomTabsStyle';
 
 class CustomTabs extends React.Component {
   state = {
@@ -22,43 +22,37 @@ class CustomTabs extends React.Component {
   };
 
   render() {
-    const {
-      classes,
-      headerColor,
-      title,
-      tabs,
-      rtlActive,
-      plainTabs
-    } = this.props;
+    const { classes, headerColor, title, tabs, rtlActive, plainTabs } =
+      this.props;
     const cardTitle = classNames({
       [classes.cardTitle]: true,
-      [classes.cardTitleRTL]: rtlActive
+      [classes.cardTitleRTL]: rtlActive,
     });
     const tabsContainer = classNames({
       [classes.tabsContainer]: true,
-      [classes.tabsContainerRTL]: rtlActive
+      [classes.tabsContainerRTL]: rtlActive,
     });
     return (
       <Card plain={plainTabs}>
         <CardHeader color={headerColor} plain={plainTabs}>
           {title !== undefined ? (
-            <div className={cardTitle}>{"title"}</div>
+            <div className={cardTitle}>{'title'}</div>
           ) : null}
           <Tabs
             classes={{
               root: classes.customTabsRoot,
               flexContainer: tabsContainer,
-              indicator: classes.displayNone
+              indicator: classes.displayNone,
             }}
             value={this.state.value}
             onChange={this.handleChange}
-            textColor="inherit"
+            textColor='inherit'
           >
             {tabs.map((prop, key) => {
               var icon = {};
               if (prop.tabIcon !== undefined) {
                 icon = {
-                  icon: <prop.tabIcon className={classes.tabIcon} />
+                  icon: <prop.tabIcon className={classes.tabIcon} />,
                 };
               } else {
                 icon = {};
@@ -71,7 +65,7 @@ class CustomTabs extends React.Component {
                     selected: classes.customTabSelected,
                     labelContainer: classes.customTabLabelContainer,
                     wrapper: classes.customTabWrapper,
-                    label: classes.customTabLabel
+                    label: classes.customTabLabel,
                   }}
                   {...icon}
                   label={prop.tabName}
@@ -96,23 +90,23 @@ class CustomTabs extends React.Component {
 CustomTabs.propTypes = {
   classes: PropTypes.object.isRequired,
   headerColor: PropTypes.oneOf([
-    "warning",
-    "success",
-    "danger",
-    "info",
-    "primary",
-    "rose",
+    'warning',
+    'success',
+    'danger',
+    'info',
+    'primary',
+    'rose',
   ]),
   title: PropTypes.string,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
       tabName: PropTypes.string.isRequired,
       tabIcon: PropTypes.func,
-      tabContent: PropTypes.node.isRequired
+      tabContent: PropTypes.node.isRequired,
     })
   ),
   rtlActive: PropTypes.bool,
-  plainTabs: PropTypes.bool
+  plainTabs: PropTypes.bool,
 };
 
 export default withStyles(customTabsStyle)(CustomTabs);

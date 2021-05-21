@@ -6,20 +6,20 @@ import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
 
-import mapStyles from './mapStyles';
+import { mapStyles } from './mapStyles';
 
 class SearchContainer extends Component {
   constructor(props) {
     super(props);
-      this.inputRef = createRef();
+    this.inputRef = createRef();
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.props.saveRef(this.inputRef);
     this.attachAutocomplete(this.inputRef.current);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate = (prevProps, prevState) => {
     if (this.props !== prevProps.map) {
       this.attachAutocomplete(this.inputRef.current);
     }

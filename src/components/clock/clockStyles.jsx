@@ -1,4 +1,4 @@
-const clockStyles = {
+export const clockStyles = {
   spacing: {
     marginLeft: "-15px",
     marginTop: "30px",
@@ -11,5 +11,3 @@ const clockStyles = {
     }
   }
 }
-
-export default clockStyles;

@@ -1,7 +1,7 @@
 import green from "@material-ui/core/colors/green";
 import blue from "@material-ui/core/colors/blue";
 
-const mapStyles = {
+export const mapStyles = {
   root: {
     padding: "2px 4px",
     display: "flex",
@@ -164,5 +164,3 @@ const mapStyles = {
     }
   }
 };
-
-export default mapStyles;

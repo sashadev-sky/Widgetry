@@ -12,7 +12,7 @@
     "serve:dev": "webpack serve --mode development",
     "serve": "webpack serve --mode production",
     "build": "webpack --mode production",
-    "start": "webpack --mode=development --watch",
+    "start": "npm run serve:dev",
     "postinstall": "npm run serve:dev"
   },
   "keywords": [],
@@ -25,8 +25,7 @@
     "google-maps-react": "^2.0.6",
     "react": "^16.14.0",
     "react-analog-clock": "^2.1.0",
-    "react-dom": "^16.14.0",
-    "react-draggable": "^4.4.3"
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

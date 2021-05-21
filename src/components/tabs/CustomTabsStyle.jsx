@@ -1,4 +1,4 @@
-const customTabsStyle = theme => ({
+export const customTabsStyle = theme => ({
   cardTitle: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontWeight: "300",
@@ -63,5 +63,3 @@ const customTabsStyle = theme => ({
     lineHeight: "24px"
   }
 });
-
-export default customTabsStyle;
