@@ -54,7 +54,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx$/,
         exclude: /(node_modules)/,
         include: [path.resolve(__dirname, './src')],
         use: {
@@ -71,7 +71,20 @@ module.exports = {
       },
       {
         test: cssRegex,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ['postcss-preset-env', {}],
+                ],
+              },
+            },
+          }
+        ],
       },
       {
         test: /\.(png|jp(e*)g|ico)$/,
