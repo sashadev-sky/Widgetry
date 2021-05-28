@@ -1,4 +1,4 @@
-export const panes = [
+export const initialPanes = [
   {
     id: 1,
     title: 'React',

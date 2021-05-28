@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -10,43 +10,49 @@ import Tab from '@material-ui/core/Tab';
 import Card from '../Card/Card';
 import CardBody from '../Card/CardBody';
 import CardHeader from '../Card/CardHeader';
-import { customTabsStyle } from './CustomTabsStyle';
+import { ToggleableForm } from './ToggleableForm';
 
-class CustomTabs extends React.Component {
-  state = {
-    value: 0
+import { tabStyles } from './tabStyles';
+
+import { initialPanes } from './seed';
+
+const TabsContainer = props => {
+  const [panes, setPanes] = useState(initialPanes);
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, value) => {
+    setValue(value);
   };
 
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
+  const { classes, title, rtlActive } = props;
 
-  render() {
-    const { classes, headerColor, title, tabs, rtlActive, plainTabs } =
-      this.props;
-    const cardTitle = classNames({
-      [classes.cardTitle]: true,
-      [classes.cardTitleRTL]: rtlActive,
-    });
-    const tabsContainer = classNames({
-      [classes.tabsContainer]: true,
-      [classes.tabsContainerRTL]: rtlActive,
-    });
-    return (
-      <Card plain={plainTabs}>
-        <CardHeader color={headerColor} plain={plainTabs}>
-          {title !== undefined ? (
-            <div className={cardTitle}>{'title'}</div>
-          ) : null}
+  const tabs = panes.map((pane) => ({
+    key: pane.id,
+    tabName: pane.title,
+    tabContent: <p className={classes.textCenter}>{pane.content}</p>,
+  }));
+
+  const tabsContainer = classNames({
+    [classes.tabsContainer]: true,
+    [classes.tabsContainerRTL]: rtlActive,
+  });
+
+  return (
+    <div className={classes.spacing}>
+      <Card>
+        <CardHeader color='success'>
+          {title !== undefined ? <div>{'title'}</div> : null}
           <Tabs
             classes={{
-              root: classes.customTabsRoot,
+              root: classes.TabsRoot,
               flexContainer: tabsContainer,
               indicator: classes.displayNone,
             }}
-            value={this.state.value}
-            onChange={this.handleChange}
+            onChange={handleChange}
+            scrollButtons='auto'
             textColor='inherit'
+            variant='scrollable'
+            value={value}
           >
             {tabs.map((prop, key) => {
               var icon = {};
@@ -61,11 +67,9 @@ class CustomTabs extends React.Component {
                 <Tab
                   key={key}
                   classes={{
-                    root: classes.customTabRoot,
-                    selected: classes.customTabSelected,
-                    labelContainer: classes.customTabLabelContainer,
-                    wrapper: classes.customTabWrapper,
-                    label: classes.customTabLabel,
+                    root: classes.TabRoot,
+                    selected: classes.TabSelected,
+                    wrapper: classes.TabWrapper,
                   }}
                   {...icon}
                   label={prop.tabName}
@@ -73,21 +77,22 @@ class CustomTabs extends React.Component {
               );
             })}
           </Tabs>
+          <ToggleableForm isOpen={true} />
         </CardHeader>
         <CardBody>
           {tabs.map((prop, key) => {
-            if (key === this.state.value) {
+            if (key === value) {
               return <div key={key}>{prop.tabContent}</div>;
             }
             return null;
           })}
         </CardBody>
       </Card>
-    );
-  }
-}
+    </div>
+  );
+};
 
-CustomTabs.propTypes = {
+TabsContainer.propTypes = {
   classes: PropTypes.object.isRequired,
   headerColor: PropTypes.oneOf([
     'warning',
@@ -105,8 +110,7 @@ CustomTabs.propTypes = {
       tabContent: PropTypes.node.isRequired,
     })
   ),
-  rtlActive: PropTypes.bool,
-  plainTabs: PropTypes.bool,
+  rtlActive: PropTypes.bool
 };
 
-export default withStyles(customTabsStyle)(CustomTabs);
+export default withStyles(tabStyles)(TabsContainer);

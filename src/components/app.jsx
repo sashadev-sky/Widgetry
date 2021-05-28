@@ -11,8 +11,7 @@ import GridContainer from './Grid/GridContainer';
 import GridItem from './Grid/GridItem';
 import MapContainer from './Map/MapComponent';
 import Parallax from './Parallax/Parallax';
-import { panes } from './Tabs/seed';
-import Tabs from './Tabs/Tabs';
+import TabsContainer from './Tabs/TabsContainer';
 import Weather from './Weather/Weather';
 
 
@@ -27,7 +26,7 @@ const App = props => {
               <Clock />
             </GridItem>
             <GridItem xs={12} sm={6} md={6}>
-              <Tabs panes={panes} />
+              <TabsContainer />
             </GridItem>
             <Weather />
             <Calculator xs={12} sm={12} md={12} />

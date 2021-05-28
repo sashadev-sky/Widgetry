@@ -99,6 +99,6 @@ module.exports = {
     compress: true,
     hot: true,
     port: 3001,
-    watchContentBase: true,
+    watchContentBase: true
   },
 };
