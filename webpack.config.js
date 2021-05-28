@@ -10,13 +10,12 @@ const cssRegex = /\.css$/;
 module.exports = {
   mode: 'production',
   context: __dirname,
-  entry: './src/index.jsx',
   output: {
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[contenthash]',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+    new HtmlWebpackPlugin({ template: 'public/index.html', favicon: 'public/favicon.ico' }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
@@ -78,12 +77,10 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  ['postcss-preset-env', {}],
-                ],
+                plugins: [['postcss-preset-env', {}]],
               },
             },
-          }
+          },
         ],
       },
       {
@@ -98,8 +95,10 @@ module.exports = {
   },
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
-    port: 3000,
-    watchContentBase: true,
     contentBase: path.resolve(__dirname, './dist'),
+    compress: true,
+    hot: true,
+    port: 3001,
+    watchContentBase: true,
   },
 };
