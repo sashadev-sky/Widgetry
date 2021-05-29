@@ -1,10 +1,11 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import { cardHeaderStyle } from './cardHeaderStyle';
+import { cardHeaderStyles } from './cardHeaderStyles';
+
 
 function CardHeader({ ...props }) {
   const {
@@ -19,15 +20,15 @@ function CardHeader({ ...props }) {
     noShadow,
     ...rest
   } = props;
-  const cardHeaderClasses = classNames({
+  const cardHeaderClasses = clsx({
     [classes.cardHeader]: true,
-    [classes[color + 'CardHeader']]: color,
+    [classes[`${color}CardHeader`]]: color,
     [classes.cardHeaderPlain]: plain,
     [classes.cardHeaderImage]: image,
     [classes.cardHeaderContact]: contact,
     [classes.cardHeaderSignup]: signup,
     [classes.noShadow]: noShadow,
-    [className]: className !== undefined,
+    [className]: className !== undefined
   });
   return (
     <div className={cardHeaderClasses} {...rest}>
@@ -36,8 +37,13 @@ function CardHeader({ ...props }) {
   );
 }
 
+CardHeader.defaultProps = {
+  className: ''
+};
+
 CardHeader.propTypes = {
-  classes: PropTypes.object.isRequired,
+  children: PropTypes.shape.isRequired,
+  classes: PropTypes.shape.isRequired,
   className: PropTypes.string,
   color: PropTypes.oneOf([
     'warning',
@@ -46,13 +52,13 @@ CardHeader.propTypes = {
     'info',
     'primary',
     'rose',
-    'yellow',
+    'yellow'
   ]),
   plain: PropTypes.bool,
   image: PropTypes.bool,
   contact: PropTypes.bool,
   signup: PropTypes.bool,
-  noShadow: PropTypes.bool,
+  noShadow: PropTypes.bool
 };
 
-export default withStyles(cardHeaderStyle)(CardHeader);
+export default withStyles(cardHeaderStyles)(CardHeader);

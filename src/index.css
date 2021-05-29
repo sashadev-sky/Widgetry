@@ -1,5 +1,4 @@
 body {
-  padding: 20px;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   background: #dddddd
@@ -7,7 +6,6 @@ body {
 
 div {
   box-sizing: content-box !important;
-  font-family: 'Roboto', sans-serif;
 }
 
 button {
@@ -22,7 +20,3 @@ button {
 .pac-container {
   position: absolute!important;
 }
-
-
-
-

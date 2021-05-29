@@ -1,0 +1,9 @@
+export const dangerColor = '#f44336';
+export const grayColor = '#999999';
+export const infoColor = '#00acc1';
+export const primaryColor = '#fce4ec';
+export const roseColor = '#e91e63';
+export const secondaryColor = '#fafafa';
+export const successColor = '#4caf50';
+export const warningColor = '#ff9800';
+export const whiteColor = '#FFFFFF';

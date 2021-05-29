@@ -1,29 +1,28 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import { cardStyle } from './cardStyle';
+import { cardStyles } from './cardStyles';
+
 
 function Card({ ...props }) {
   const {
     classes,
     className,
     children,
-    plain,
     raised,
     background,
     color,
     ...rest
   } = props;
-  const cardClasses = classNames({
+  const cardClasses = clsx({
     [classes.card]: true,
-    [classes.cardPlain]: plain,
     [classes.cardRaised]: raised,
     [classes.cardBackground]: background,
     [classes[color]]: color,
-    [className]: className !== undefined,
+    [className]: className !== undefined
   });
   return (
     <div className={cardClasses} {...rest}>
@@ -32,10 +31,16 @@ function Card({ ...props }) {
   );
 }
 
+Card.defaultProps = {
+  className: '',
+  raised: false,
+  background: false
+};
+
 Card.propTypes = {
-  classes: PropTypes.object.isRequired,
+  children: PropTypes.shape.isRequired,
+  classes: PropTypes.shape.isRequired,
   className: PropTypes.string,
-  plain: PropTypes.bool,
   raised: PropTypes.bool,
   background: PropTypes.bool,
   color: PropTypes.oneOf([
@@ -44,8 +49,8 @@ Card.propTypes = {
     'success',
     'warning',
     'danger',
-    'rose',
-  ]),
+    'rose'
+  ])
 };
 
-export default withStyles(cardStyle)(Card);
+export default withStyles(cardStyles)(Card);

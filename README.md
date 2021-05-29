@@ -1,11 +1,10 @@
 # React Widgetry
 
-- Fully responsive set of reusable components made with React
+- Set of reusable components made with React
 
 - Integrates various APIs onto a single platform for a user to have available at their fingertips
 
-- User-centered design that includes crowd-pleasing features
-such as parallax scrolling and a subtly matching color palette.
+- User-centered and fully responsive design
 
 ---
 
@@ -13,7 +12,7 @@ such as parallax scrolling and a subtly matching color palette.
 
 - React 16.14.0 (Framework)
 
-- Node 16.1.0 (Environment)
+- Node 16.2.0 (Environment)
 
 - npm 7.13.0 (Package Manager)
 
@@ -116,56 +115,120 @@ On a very basic level:
 Dependencies:
 
 - `@material-ui/core` 4.11.4 (Styling)
+
 - `@material-ui/icons` 4.11.2 (Icons)
 
-### Material-UI's  `withStyles`
+- `clsx` 1.1.1
+
+### Material-UI's  `withStyles` & `makeStyles`
 
 Material-UI provides React components for faster and easier web development.
 
-It is built with a CSS-in-JS solution, specifically **JSS** - a high performance JavaScript to CSS compiler which works at runtime and server-side.
+It is built with a CSS-in-JS solution, specifically **JSS** (**JavaScript Style Sheets**) - a high performance JavaScript to CSS compiler which works at runtime and server-side.
 
-react-widgets uses their **`withStyles`** function as part of their Higher-order component API.
+This project uses their **`withStyles`** function as part of their Higher-order component API.
 
-<details><summary>Example</summary>
+<ul><li><details><summary>Example - by calling <code><b>withStyles(styles)(MyComponent)</b></code>, you’re returning a new component that has a <code><b>classes</b></code> property. </summary>
 
 ```Javascript
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const styles = {
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
+    //...
   },
 };
 
 function HigherOrderComponent(props) {
   const { classes } = props;
   return <Button className={classes.root}>Higher-order component</Button>;
-}
+};
 
 HigherOrderComponent.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles)(HigherOrderComponent);
 ```
 
+</li></ul></details>
+
+Moving towards the pattern of using functional components and hooks, some componenents that already rely on state hooks leverage Material-UI style hooks with **`makeStyles()`**.
+
+The **`useStyles()`** hook is built using the **`makeStyles()`** function—which takes the exact same styles argument as **`withStyles()`**.
+
+<ul><li><details><summary>Example - by calling <code><b>useStyles()</b> </code>within the component, you have your <code><b>classes</b></code>object </summary>:
+
+```Javascript
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const styles = {
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    //...
+  },
+};
+
+const useStyles = makeStyles(styles);
+
+export function Hook(props) {
+  const classes = useStyles();
+  return <Button className={classes.root}>Hook</Button>;
+};
+```
+
+</details></li></ul>
+
+### clsx's `clsx`
+
+`clsx` is a tiny utility for constructing `className` strings conditionally, making it easier to concatenate classes.
+
+It is a faster & smaller drop-in replacement for the `classnames` module, which it shares almost an identical API with.
+
+react-widgets uses it to create clean `className` declarations with the **`clsx`** function.
+
+<details><summary>Example - this syntax means that some class will only be applied if a given condition evaluates to true.</summary>
+
+```Javascript
+import React from 'react';
+import clsx from 'clsx';
+
+const menuStyle = clsx({
+  [classes.root] : true, //always applies
+  [classes.menuOpen] : open //only when open === true
+});
+
+return (
+  <div className={menuStyle}>
+    {children}
+  </div>
+);
+```
+
 </details>
 
-### classnames' `classNames`
+<details><summary>Example 2 - another common use case is to achieve cleaner string interpolation.</summary>
 
-`classnames` is a nodejs library that concatenates classes.
+<br>
 
-react-widgets uses this to create clean `className` declarations with the **`classNames`** function.
+Instead of
+
+```Javascript
+<div className={`${classes.foo} ${classes.bar} ${classes.baz}`} />
+```
+
+You can use it like this
+
+```Javascript
+const { foo, bar, baz } = classes
+<div className={clsx(foo, bar, baz)} />
+```
+
+</details>
 
 ---
 

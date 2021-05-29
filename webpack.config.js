@@ -15,7 +15,10 @@ module.exports = {
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[contenthash]',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'public/index.html', favicon: 'public/favicon.ico' }),
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      favicon: 'public/favicon.ico',
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
@@ -53,20 +56,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
-        exclude: /(node_modules)/,
-        include: [path.resolve(__dirname, './src')],
-        use: {
-          loader: 'babel-loader',
-          options: {
-            exclude: [
-              // \\ for Windows, \/ for Mac OS and Linux
-              /node_modules[\\\/]core-js/,
-              /node_modules[\\\/]webpack[\\\/]buildin/,
-            ],
-            presets: ['@babel/env', '@babel/react'],
+        test: /\.(js|jsx)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              exclude: [
+                /(node_modules)/,
+                // \\ for Windows, \/ for Mac OS and Linux
+                /node_modules[\\\/]core-js/,
+                /node_modules[\\\/]webpack[\\\/]buildin/,
+              ],
+              presets: ['@babel/env', '@babel/react'],
+            },
           },
-        },
+        ],
       },
       {
         test: cssRegex,
@@ -84,7 +88,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jp(e*)g|ico)$/,
+        test: /\.(png|jp(e*)g|ico|webp)$/,
         type: 'asset',
       },
     ],
@@ -99,6 +103,6 @@ module.exports = {
     compress: true,
     hot: true,
     port: 3001,
-    watchContentBase: true
+    watchContentBase: true,
   },
 };
